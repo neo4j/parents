@@ -28,7 +28,7 @@
   </mailingLists>
 
   <scm>
-    <connection>scm:svn:https://svn.neo4j.org/components/</connection>
+    <connection>scm:svn:https://svn.neo4j.org/components/parent/trunk</connection>
     <url>https://trac.neo4j.org/browser/components/</url>
   </scm>
 
