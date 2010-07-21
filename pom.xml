@@ -4,7 +4,7 @@
   <artifactId>parent-pom</artifactId>
   <name>Neo4j parent POM</name>
   <packaging>pom</packaging>
-  <version>7-rc</version>
+  <version>7-SNAPSHOT</version>
 
   <url>http://components.neo4j.org/</url>
   <organization>
@@ -28,8 +28,8 @@
   </mailingLists>
 
   <scm>
-    <connection>scm:svn:https://svn.neo4j.org/components/parent/tags/parent-pom-7-rc</connection>
-    <url>scm:svn:https://svn.neo4j.org/components/parent/tags/parent-pom-7-rc</url>
+    <connection>scm:svn:https://svn.neo4j.org/components/parent/trunk</connection>
+    <url>https://trac.neo4j.org/browser/components/</url>
   </scm>
 
   <issueManagement>
