@@ -178,6 +178,11 @@
           <artifactId>clirr-maven-plugin</artifactId>
           <version>2.2.2</version>
         </plugin>
+        <plugin>
+          <groupId>com.google.code.maven-svn-revision-number-plugin</groupId>
+          <artifactId>maven-svn-revision-number-plugin</artifactId>
+          <version>1.4</version>
+        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
