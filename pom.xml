@@ -1,11 +1,10 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.neo4j</groupId>
   <artifactId>parent-pom</artifactId>
   <name>Neo4j parent POM</name>
   <packaging>pom</packaging>
-  <version>7-SNAPSHOT</version>
+  <version>7-rc</version>
 
   <url>http://components.neo4j.org/</url>
   <organization>
@@ -29,8 +28,8 @@
   </mailingLists>
 
   <scm>
-    <connection>scm:svn:https://svn.neo4j.org/components/</connection>
-    <url>https://trac.neo4j.org/browser/components/</url>
+    <connection>scm:svn:https://svn.neo4j.org/components/parent-pom-7-rc</connection>
+    <url>https://trac.neo4j.org/browser/components/parent-pom-7-rc</url>
   </scm>
 
   <issueManagement>
