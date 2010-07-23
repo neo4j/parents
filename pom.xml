@@ -2,12 +2,6 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <artifactId>parent-pom</artifactId>
-    <groupId>org.neo4j</groupId>
-    <version>7-SNAPSHOT</version>
-  </parent>
-
   <groupId>org.neo4j.maven.skins</groupId>
   <artifactId>default-skin</artifactId>
   <version>1.0.1-SNAPSHOT</version>
@@ -43,6 +37,7 @@
     <plugins>
       <plugin>
         <artifactId>maven-site-plugin</artifactId>
+        <version>2.0-beta-7</version>
         <dependencies>
           <dependency>
             <groupId>org.apache.maven.doxia</groupId>
@@ -54,6 +49,7 @@
       <plugin>
         <groupId>org.codehaus.plexus</groupId>
         <artifactId>plexus-maven-plugin</artifactId>
+        <version>1.3.8</version>
         <executions>
           <execution>
             <goals>
@@ -61,6 +57,13 @@
             </goals>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.5</source>
+          <target>1.5</target>
+        </configuration>
       </plugin>
       <plugin>
         <artifactId>maven-release-plugin</artifactId>
@@ -71,4 +74,24 @@
       </plugin>
     </plugins>
   </build>
+  
+  <distributionManagement>
+    <repository>
+      <id>releases@repo.neo4j.org</id>
+      <name>releases@repo.neo4j.org</name>
+      <uniqueVersion>false</uniqueVersion>
+      <url>https://repo.neo4j.org/content/repositories/releases</url>
+    </repository>
+    <snapshotRepository>
+      <id>snapshots@repo.neo4j.org</id>
+      <name>snapshots@repo.neo4j.org</name>
+      <uniqueVersion>true</uniqueVersion>
+      <url>https://repo.neo4j.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <site>
+      <id>neo4j-site</id>
+      <url>scpexe://m2.neo4j.org/home/neo/components</url>
+    </site>
+  </distributionManagement>
+  
 </project>
