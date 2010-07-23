@@ -3,15 +3,15 @@
 
   <groupId>org.neo4j.maven.skins</groupId>
   <artifactId>default-skin</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>Neo4j Maven skin</name>
   <url>http://components.neo4j.org/</url>
   <inceptionYear>2008</inceptionYear>
 
   <scm>
-    <connection>scm:svn:https://svn.neo4j.org/community/maven-skin/tags/1.0.1</connection>
-    <url>https://trac.neo4j.org/browser/community/maven-skin/tags/1.0.1</url>
+    <connection>scm:svn:https://svn.neo4j.org/community/maven-skin/trunk</connection>
+    <url>https://trac.neo4j.org/browser/community/maven-skin/trunk</url>
   </scm>
 
   <dependencies>
