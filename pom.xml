@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.neo4j</groupId>
   <artifactId>parent-pom</artifactId>
@@ -47,6 +48,10 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <ga-id>UA-1192232-15</ga-id>
+    <siteGroupId>org.neo4j.maven.skins</siteGroupId>
+    <siteArtifactId>default-skin</siteArtifactId>
+    <siteVersion>1.0.1-SNAPSHOT</siteVersion>
+    <short-name>parent</short-name>
   </properties>
 
   <build>
@@ -112,7 +117,7 @@
           <artifactId>maven-ejb-plugin</artifactId>
           <version>2.1</version>
         </plugin>
-	<plugin>
+        <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-help-plugin</artifactId>
           <version>2.1.1</version>
@@ -230,16 +235,6 @@
         </executions>
       </plugin>
       <plugin>
-        <artifactId>maven-site-plugin</artifactId>
-        <dependencies>
-          <dependency>
-            <groupId>org.neo4j.maven.skins</groupId>
-            <artifactId>default-skin</artifactId>
-            <version>1.0.1-SNAPSHOT</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-      <plugin>
         <groupId>org.apache.felix</groupId>
         <artifactId>maven-bundle-plugin</artifactId>
         <extensions>true</extensions>
@@ -258,7 +253,7 @@
       <plugin>
         <artifactId>maven-release-plugin</artifactId>
         <configuration>
-          <tagBase>https://svn.neo4j.org/components/parent/tags</tagBase>
+          <tagBase>https://svn.neo4j.org/components/${short-name}/tags</tagBase>
         </configuration>
       </plugin>
     </plugins>
@@ -272,7 +267,7 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  
+
   <reporting>
     <plugins>
       <plugin>
