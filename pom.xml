@@ -317,7 +317,7 @@
     </snapshotRepository>
     <site>
       <id>neo4j-site</id>
-      <url>scpexe://m2.neo4j.org/home/neo/components</url>
+      <url>scpexe://components.neo4j.org/home/neo/components</url>
     </site>
   </distributionManagement>
 
