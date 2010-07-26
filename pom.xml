@@ -49,9 +49,9 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <ga-id>UA-1192232-15</ga-id>
-    <siteGroupId>org.neo4j.maven.skins</siteGroupId>
-    <siteArtifactId>default-skin</siteArtifactId>
-    <siteVersion>1.0.1-SNAPSHOT</siteVersion>
+    <skinGroupId>org.neo4j.maven.skins</skinGroupId>
+    <skinArtifactId>default-skin</skinArtifactId>
+    <skinVersion>1.0.1</skinVersion>
     <short-name>parent</short-name>
   </properties>
 
@@ -161,6 +161,13 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
           <version>2.0-beta-7</version>
+          <dependencies>
+            <dependency>
+              <groupId>${skinGroupId}</groupId>
+              <artifactId>${skinArtifactId}</artifactId>
+              <version>${skinVersion}</version>
+            </dependency>
+          </dependencies>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
