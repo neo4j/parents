@@ -1,6 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
->
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.neo4j</groupId>
   <artifactId>parent-pom</artifactId>
@@ -52,6 +51,9 @@
     <skinGroupId>org.neo4j.maven.skins</skinGroupId>
     <skinArtifactId>default-skin</skinArtifactId>
     <skinVersion>1.0.1</skinVersion>
+    <mavenJavadocPluginVersion>2.5</mavenJavadocPluginVersion>
+    <mavenProjectInfoReportsPluginVersion>2.2</mavenProjectInfoReportsPluginVersion>
+    <clirrMavenPluginVersion>2.2.2</clirrMavenPluginVersion>
     <short-name>parent</short-name>
   </properties>
 
@@ -131,7 +133,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>2.5</version>
+          <version>${mavenJavadocPluginVersion}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -141,6 +143,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>${mavenProjectInfoReportsPluginVersion}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -198,7 +201,7 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>clirr-maven-plugin</artifactId>
-          <version>2.2.2</version>
+          <version>${clirrMavenPluginVersion}</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
@@ -288,7 +291,9 @@
   <reporting>
     <plugins>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
+        <version>${mavenJavadocPluginVersion}</version>
         <inherited>true</inherited>
         <configuration>
           <detectJavaApiLink>true</detectJavaApiLink>
@@ -304,6 +309,17 @@
             </reports>
           </reportSet>
         </reportSets>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>${mavenProjectInfoReportsPluginVersion}</version>
+      </plugin>
+      <!-- non org.apache.maven.plugins -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>clirr-maven-plugin</artifactId>
+        <version>${clirrMavenPluginVersion}</version>
       </plugin>
     </plugins>
   </reporting>
