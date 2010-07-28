@@ -1,0 +1,62 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <parent>
+    <groupId>org.neo4j.assembly</groupId>
+    <artifactId>assembly-pom</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.neo4j.examples</groupId>
+  <artifactId>examples-pom</artifactId>
+  <packaging>pom</packaging>
+  <name>Examples packaging configuration</name>
+  <version>1.0.0-SNAPSHOT</version>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>license-report</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>dependencies</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}/dependencies</outputDirectory>
+              <dependencyDetailsEnabled>false</dependencyDetailsEnabled>
+              <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>appassembler-maven-plugin</artifactId>
+        <configuration>
+          <inherited>true</inherited>
+          <repositoryLayout>flat</repositoryLayout>
+          <repositoryName>lib</repositoryName>
+          <includeConfigurationDirectoryInClasspath>false
+          </includeConfigurationDirectoryInClasspath>
+          <platforms>
+            <platform>windows</platform>
+            <platform>unix</platform>
+          </platforms>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <inherited>true</inherited>
+          <descriptors>
+            <descriptor>https://svn.neo4j.org/examples/examples-pom/trunk/src/main/assembly/examples-assembly.xml
+                        </descriptor>
+          </descriptors>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
