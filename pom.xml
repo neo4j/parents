@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <parent>
     <groupId>org.neo4j.assembly</groupId>
     <artifactId>assembly-pom</artifactId>
@@ -10,7 +9,7 @@
   <artifactId>examples-pom</artifactId>
   <packaging>pom</packaging>
   <name>Examples packaging configuration</name>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0</version>
   
   <url>http://neo4j.org/</url>
   
@@ -19,8 +18,8 @@
   </properties>
   
   <scm>
-    <connection>scm:svn:https://svn.neo4j.org/examples/${short-name}/trunk</connection>
-    <url>https://trac.neo4j.org/browser/examples/${short-name}/trunk</url>
+    <connection>scm:svn:https://svn.neo4j.org/examples/examples-pom/tags/1.0</connection>
+    <url>https://trac.neo4j.org/browser/examples/examples-pom/tags/1.0</url>
   </scm>
 
   <build>
