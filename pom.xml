@@ -11,6 +11,17 @@
   <packaging>pom</packaging>
   <name>Examples packaging configuration</name>
   <version>1.0.0-SNAPSHOT</version>
+  
+  <url>http://neo4j.org/</url>
+  
+  <properties>
+    <short-name>examples-pom</short-name>
+  </properties>
+  
+  <scm>
+    <connection>scm:svn:https://svn.neo4j.org/examples/${short-name}/trunk</connection>
+    <url>https://trac.neo4j.org/browser/examples/${short-name}/trunk</url>
+  </scm>
 
   <build>
     <plugins>
@@ -54,6 +65,12 @@
             <descriptor>https://svn.neo4j.org/examples/examples-pom/trunk/src/main/assembly/examples-assembly.xml
                         </descriptor>
           </descriptors>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-release-plugin</artifactId>
+        <configuration>
+          <tagBase>https://svn.neo4j.org/examples/${short-name}/tags</tagBase>
         </configuration>
       </plugin>
     </plugins>
