@@ -305,7 +305,7 @@
           <quiet>true</quiet>
           <detectLinks>true</detectLinks>
           <detectJavaApiLink>true</detectJavaApiLink>
-          <excludePackageNames>*.impl.*:org.neo4j.shell:org.neo4j.remote.inspect
+          <excludePackageNames>*.impl.*:org.neo4j.shell:org.neo4j.remote.inspect:org.neo4j.onlinebackup.ha:org.neo4j.onlinebackup.net
           </excludePackageNames>
           <groups>
             <group>
