@@ -70,6 +70,10 @@
               </reportOutputDirectory>
             </configuration>
           </execution>
+          <execution>
+            <id>attach-javadocs</id>
+            <phase>none</phase>
+          </execution>
         </executions>
       </plugin>
       <plugin>
