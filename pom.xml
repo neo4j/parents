@@ -12,6 +12,14 @@
   <packaging>pom</packaging>
   <name>Assembly pom</name>
   <description>Modifies parent pom for assemblies.</description>
+  
+  <properties>
+    <short-name>assembly-pom</short-name>
+  </properties>
+  
+  <scm>
+    <connection>scm:svn:https://svn.neo4j.org/assemblies/${short-name}/trunk</connection>
+  </scm>
 
   <distributionManagement>
     <snapshotRepository>
