@@ -51,7 +51,7 @@
     <ga-id>UA-1192232-15</ga-id>
     <skinGroupId>org.neo4j.maven.skins</skinGroupId>
     <skinArtifactId>default-skin</skinArtifactId>
-    <skinVersion>1.0.2-SNAPSHOT</skinVersion>
+    <skinVersion>1.0.2</skinVersion>
     <doxiaCoreVersion>1.0</doxiaCoreVersion>
     <mavenJavadocPluginVersion>2.5</mavenJavadocPluginVersion>
     <mavenProjectInfoReportsPluginVersion>2.1</mavenProjectInfoReportsPluginVersion>
