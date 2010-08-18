@@ -22,6 +22,13 @@
     <url>https://trac.neo4j.org/browser/examples/examples-pom/trunk</url>
   </scm>
 
+  <distributionManagement>
+    <site>
+      <id>neo4j-site</id>
+      <url>scpexe://components.neo4j.org/home/neo/components</url>
+    </site>
+  </distributionManagement>
+
   <build>
     <plugins>
       <plugin>
