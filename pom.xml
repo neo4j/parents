@@ -28,6 +28,10 @@
       <uniqueVersion>false</uniqueVersion>
       <url>https://repo.neo4j.org/content/repositories/snapshots</url>
     </snapshotRepository>
+    <site>
+      <id>neo4j-site</id>
+      <url>scpexe://components.neo4j.org/home/neo/components</url>
+    </site>
   </distributionManagement>
 
   <build>
