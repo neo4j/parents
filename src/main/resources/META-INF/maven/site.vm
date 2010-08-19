@@ -93,6 +93,9 @@
     #set ( $counter = $counter + 1 )
     #set ( $currentItemHref = $PathTool.calculateLink( $item.href, $relativePath ) )
     #set ( $currentItemHref = $currentItemHref.replaceAll( "\\", "/" ) )
+    #if ( $item.name == "components" )
+      #set ( $currentItemHref = "http://components.neo4j.org/" )
+    #end
     #link( $currentItemHref $item.name $item.target $item.img $item.position $item.alt $item.border $item.width $item.height )
     #if ( $links.size() > $counter )
       |
