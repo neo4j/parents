@@ -309,6 +309,13 @@
           <quiet>true</quiet>
           <detectLinks>true</detectLinks>
           <detectJavaApiLink>true</detectJavaApiLink>
+          <tags>
+            <tag>
+              <name>complexity</name>
+              <placement>a</placement>
+              <head>Complexity:</head>
+            </tag>
+          </tags>
           <javaApiLinks>
             <property>
               <name>api_1.5</name>
