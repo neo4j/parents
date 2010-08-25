@@ -319,7 +319,7 @@
           <javaApiLinks>
             <property>
               <name>api_1.5</name>
-              <value>http://java.sun.com/j2se/1.5.0/docs/api/</value>
+              <value>http://download.oracle.com/javase/1.5.0/docs/api/</value>
             </property>
             <property>
               <name>api_1.6</name>
