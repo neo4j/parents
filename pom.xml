@@ -17,8 +17,8 @@
   </properties>
   
   <scm>
-    <connection>scm:svn:https://svn.neo4j.org/assemblies/assembly-pom/trunk</connection>
-    <url>scm:svn:https://svn.neo4j.org/components/parent/tags/7/assembly-pom</url>
+    <connection>scm:svn:https://svn.neo4j.org/assemblies/${short-name}/trunk</connection>
+    <url>https://trac.neo4j.org/browser/assemblies/${short-name}/trunk</url>
   </scm>
 
   <distributionManagement>
@@ -47,6 +47,7 @@
         <executions>
           <execution>
             <id>get-javadoc-sources</id>
+            <phase>generate-sources</phase>
             <inherited>true</inherited>
             <goals>
               <goal>unpack-dependencies</goal>
@@ -99,5 +100,32 @@
       </plugin>
     </plugins>
   </build>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <reportSets>
+          <reportSet>
+            <id>javadoc-aggregated-report</id>
+            <reports>
+              <report>aggregate</report>
+            </reports>
+            <configuration>
+              <destDir>apidocs</destDir>
+              <sourcepath>${project.build.directory}/sources</sourcepath>
+            </configuration>
+          </reportSet>
+        </reportSets>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>clirr-maven-plugin</artifactId>
+        <reportSets>
+          <reportSet></reportSet>
+        </reportSets>
+      </plugin>
+    </plugins>
+  </reporting>
 
 </project>
