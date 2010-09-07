@@ -224,6 +224,11 @@
           <artifactId>maven-svn-revision-number-plugin</artifactId>
           <version>1.4</version>
         </plugin>
+        <plugin>
+          <groupId>org.ops4j</groupId>
+          <artifactId>maven-pax-plugin</artifactId>
+          <version>1.4</version>
+       </plugin>
       </plugins>
     </pluginManagement>
 
