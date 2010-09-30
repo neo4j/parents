@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.neo4j</groupId>
-    <artifactId>neo4j</artifactId>
+    <artifactId>parent-central</artifactId>
     <version>1-SNAPSHOT</version>
   </parent>
   <groupId>org.neo4j</groupId>
