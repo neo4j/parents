@@ -288,6 +288,11 @@
           <version>1.2</version>
         </plugin>
         <plugin>
+          <groupId>com.mycila.maven-license-plugin</groupId>
+          <artifactId>maven-license-plugin</artifactId>
+          <version>1.8.0</version>
+        </plugin>
+        <plugin>
           <groupId>org.codehaus.plexus</groupId>
           <artifactId>plexus-maven-plugin</artifactId>
           <version>1.3.8</version>
@@ -370,7 +375,7 @@
         <artifactId>maven-license-plugin</artifactId>
         <configuration>
           <strictCheck>true</strictCheck>
-          <header>http://www.neo4j.org/license-header.txt</header>
+          <header>http://neo4j.org/license-header.txt</header>
           <includes>
             <include>**/*.java</include>
           </includes>
