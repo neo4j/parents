@@ -365,6 +365,17 @@
           </tagBase>
         </configuration>
       </plugin>
+      <plugin>
+        <groupId>com.mycila.maven-license-plugin</groupId>
+        <artifactId>maven-license-plugin</artifactId>
+        <configuration>
+          <strictCheck>true</strictCheck>
+          <header>http://www.neo4j.org/license-header.txt</header>
+          <includes>
+            <include>**/*.java</include>
+          </includes>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 
