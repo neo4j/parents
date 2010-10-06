@@ -14,6 +14,7 @@
 
   <scm>
     <connection>scm:svn:https://svn.neo4j.org/components/parent/trunk</connection>
+    <developerConnection>${project.scm.connection}</developerConnection>
     <url>https://trac.neo4j.org/browser/components/</url>
   </scm>
 
