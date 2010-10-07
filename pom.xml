@@ -7,7 +7,7 @@
   </parent>
   <groupId>org.neo4j.assembly</groupId>
   <artifactId>assembly-pom</artifactId>
-  <version>1.1-SNAPSHOT</version>
+  <version>1.1</version>
   <packaging>pom</packaging>
   <name>Assembly pom</name>
   <description>Modifies parent pom for assemblies.</description>
@@ -17,9 +17,9 @@
   </properties>
   
   <scm>
-    <connection>scm:svn:https://svn.neo4j.org/assemblies/${short-name}/trunk</connection>
-    <developerConnection>scm:svn:https://svn.neo4j.org/assemblies/${short-name}/trunk</developerConnection>
-    <url>https://trac.neo4j.org/browser/assemblies/${short-name}/trunk</url>
+    <connection>scm:svn:https://svn.neo4j.org/assemblies/assembly-pom/tags/1.1</connection>
+    <developerConnection>scm:svn:https://svn.neo4j.org/assemblies/assembly-pom/tags/1.1</developerConnection>
+    <url>https://trac.neo4j.org/browser/assemblies/assembly-pom/tags/1.1</url>
   </scm>
 
   <distributionManagement>
@@ -123,7 +123,7 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>clirr-maven-plugin</artifactId>
         <reportSets>
-          <reportSet></reportSet>
+          <reportSet />
         </reportSets>
       </plugin>
     </plugins>
