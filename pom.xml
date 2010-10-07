@@ -129,4 +129,34 @@
     </plugins>
   </reporting>
 
+  <profiles>
+    <profile>
+      <id>upload-to-dist-server</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>wagon-maven-plugin</artifactId>
+            <groupId>org.codehaus.mojo</groupId>
+            <version>1.0-beta-3</version>
+            <configuration>
+              <fromDir>${project.build.directory}</fromDir>
+              <url>scpexe://dist-server</url>
+              <toDir>$HOME/public_html/dist</toDir>
+              <includes>*.zip,*.tar.gz</includes>
+            </configuration>
+            <executions>
+              <execution>
+                <id>upload-to-dist-server</id>
+                <goals>
+                  <goal>upload</goal>
+                </goals>
+                <phase>deploy</phase>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
 </project>
