@@ -2,7 +2,7 @@
   <parent>
     <groupId>org.neo4j.assembly</groupId>
     <artifactId>assembly-pom</artifactId>
-    <version>1.1</version>
+    <version>2</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.neo4j.examples</groupId>
