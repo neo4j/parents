@@ -18,6 +18,7 @@
   
   <scm>
     <connection>scm:svn:https://svn.neo4j.org/assemblies/${short-name}/trunk</connection>
+    <developerConnection>scm:svn:https://svn.neo4j.org/assemblies/${short-name}/trunk</developerConnection>
     <url>https://trac.neo4j.org/browser/assemblies/${short-name}/trunk</url>
   </scm>
 
