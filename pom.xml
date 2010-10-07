@@ -58,8 +58,8 @@
               </outputDirectory>
               <includeGroupIds>org.neo4j</includeGroupIds>
               <!-- neo4j-apoc has no sources -->
-              <!-- neo4j-shell isn't what users look for here -->
-              <excludeArtifactIds>neo4j-apoc,neo4j-shell
+              <!-- neo4j-shell or neo4j-udc isn't what users look for here -->
+              <excludeArtifactIds>neo4j-apoc,neo4j-shell,neo4j-udc
               </excludeArtifactIds>
             </configuration>
           </execution>
