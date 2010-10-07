@@ -374,7 +374,7 @@
       <plugin>
         <artifactId>maven-release-plugin</artifactId>
         <configuration>
-          <tag>${project.version}</tag>
+          <tag>${releaseVersion}</tag>
           <tagBase>https://svn.neo4j.org/components/${short-name}/tags</tagBase>
         </configuration>
       </plugin>
