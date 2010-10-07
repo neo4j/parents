@@ -9,7 +9,7 @@
   <artifactId>examples-pom</artifactId>
   <packaging>pom</packaging>
   <name>Examples packaging configuration</name>
-  <version>1.2-SNAPSHOT</version>
+  <version>2-SNAPSHOT</version>
   
   <url>http://neo4j.org/</url>
   
