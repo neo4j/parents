@@ -9,7 +9,7 @@
   <artifactId>examples-pom</artifactId>
   <packaging>pom</packaging>
   <name>Examples packaging configuration</name>
-  <version>4</version>
+  <version>5-SNAPSHOT</version>
   
   <url>http://neo4j.org/</url>
   
@@ -18,9 +18,9 @@
   </properties>
   
   <scm>
-    <connection>scm:svn:https://svn.neo4j.org/examples/examples-pom/tags/4</connection>
-    <developerConnection>scm:svn:https://svn.neo4j.org/examples/examples-pom/tags/4</developerConnection>
-    <url>https://trac.neo4j.org/browser/examples/examples-pom/tags/4</url>
+    <connection>scm:svn:https://svn.neo4j.org/examples/examples-pom/trunk</connection>
+    <developerConnection>scm:svn:https://svn.neo4j.org/examples/examples-pom/trunk</developerConnection>
+    <url>https://trac.neo4j.org/browser/examples/examples-pom/trunk</url>
   </scm>
 
   <distributionManagement>
