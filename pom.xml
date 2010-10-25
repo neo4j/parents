@@ -2,16 +2,16 @@
   <parent>
     <groupId>org.neo4j.assembly</groupId>
     <artifactId>assembly-pom</artifactId>
-    <version>4</version>
+    <version>5-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.neo4j.examples</groupId>
   <artifactId>examples-pom</artifactId>
   <packaging>pom</packaging>
-  <name>Examples packaging configuration</name>
+  <name>Examples pom</name>
+  <description>Examples packaging configuration</description>
   <version>5-SNAPSHOT</version>
-  
-  <url>http://neo4j.org/</url>
+  <url>http://components.neo4j.org/${project.artifactId}</url>
   
   <properties>
     <short-name>examples-pom</short-name>
@@ -29,6 +29,13 @@
       <url>scpexe://components.neo4j.org/home/neo/components</url>
     </site>
   </distributionManagement>
+
+  <licenses>
+    <license>
+      <name>GNU Affero General Public License, Version 3</name>
+      <url>http://www.gnu.org/licenses/agpl-3.0-standalone.html</url>
+    </license>
+  </licenses>
 
   <build>
     <plugins>
@@ -69,15 +76,9 @@
         <configuration>
           <inherited>true</inherited>
           <descriptors>
-            <descriptor>https://svn.neo4j.org/examples/examples-pom/trunk/src/main/assembly/examples-assembly.xml
-                        </descriptor>
+            <descriptor>https://svn.neo4j.org/examples/examples-pom/trunk/src/main/assembly/examples-assembly.xml</descriptor>
           </descriptors>
         </configuration>
-      </plugin>
-      <plugin>
-        <artifactId>maven-deploy-plugin</artifactId>
-        <!-- fix issue with appassembler -->
-        <version>2.4</version>
       </plugin>
       <plugin>
         <artifactId>maven-release-plugin</artifactId>
@@ -87,5 +88,17 @@
       </plugin>
     </plugins>
   </build>
+
+  <developers>
+    <developer>
+      <id>andersn</id>
+      <name>Anders Nawroth</name>
+      <email>anders [at] neotechnology.com</email>
+      <timezone>+1</timezone>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
 
 </project>
