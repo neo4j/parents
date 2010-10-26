@@ -373,7 +373,6 @@
             <id>attach-javadocs</id>
             <goals>
               <goal>jar</goal>
-              <goal>test-jar</goal>
             </goals>
           </execution>
         </executions>
@@ -483,7 +482,6 @@
             <id>javadoc-report</id>
             <reports>
               <report>javadoc</report>
-              <report>test-javadoc</report>
             </reports>
           </reportSet>
         </reportSets>
