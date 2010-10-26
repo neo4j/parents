@@ -40,19 +40,14 @@
   <build>
     <plugins>
       <plugin>
-        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <artifactId>maven-site-plugin</artifactId>
         <executions>
           <execution>
-            <id>license-report</id>
+            <id>create-site</id>
             <phase>prepare-package</phase>
             <goals>
-              <goal>dependencies</goal>
+              <goal>site</goal>
             </goals>
-            <configuration>
-              <outputDirectory>${project.build.directory}/dependencies</outputDirectory>
-              <dependencyDetailsEnabled>false</dependencyDetailsEnabled>
-              <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
-            </configuration>
           </execution>
         </executions>
       </plugin>
@@ -73,12 +68,32 @@
       </plugin>
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
+        <dependencies>
+          <dependency>
+            <groupId>org.neo4j.examples</groupId>
+            <artifactId>examples-assembly-descriptor</artifactId>
+            <version>1-SNAPSHOT</version>
+          </dependency>
+        </dependencies>
         <configuration>
           <inherited>true</inherited>
           <descriptors>
-            <descriptor>https://svn.neo4j.org/examples/examples-pom/trunk/src/main/assembly/examples-assembly.xml</descriptor>
+            <descriptor>examples-assembly.xml</descriptor>
           </descriptors>
         </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>create-javadocs</id>
+            <phase>none</phase>
+          </execution>
+          <execution>
+            <id>attach-javadocs</id>
+            <phase>none</phase>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
         <artifactId>maven-release-plugin</artifactId>
