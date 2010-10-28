@@ -43,8 +43,7 @@
 
   <issueManagement>
     <system>Trac</system>
-    <url>https://trac.neo4j.org/query?status=assigned&amp;status=new&amp;status=reopened&amp;component=${project.artifactId}
-    </url>
+    <url>https://trac.neo4j.org/query?status=assigned&amp;status=new&amp;status=reopened&amp;component=${project.artifactId}</url>
   </issueManagement>
 
   <licenses>
@@ -581,7 +580,7 @@
   <repositories>
     <repository>
       <id>neo4j-snapshot-repository</id>
-      <name>Publically available Maven 2 snapshot repository for Neo4j</name>
+      <name>Neo4j Maven 2 snapshot repository</name>
       <url>http://m2.neo4j.org/snapshots</url>
       <snapshots>
         <enabled>true</enabled>
