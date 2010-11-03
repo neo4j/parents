@@ -7,7 +7,7 @@
   </parent>
   <groupId>org.neo4j.assembly</groupId>
   <artifactId>assembly-pom</artifactId>
-  <version>6</version>
+  <version>7-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Assembly pom</name>
   <description>Parent pom for assemblies.</description>
@@ -18,9 +18,9 @@
   </properties>
   
   <scm>
-    <connection>scm:svn:https://svn.neo4j.org/assemblies/assembly-pom/tags/6</connection>
-    <developerConnection>scm:svn:https://svn.neo4j.org/assemblies/assembly-pom/tags/6</developerConnection>
-    <url>https://trac.neo4j.org/browser/assemblies/assembly-pom/tags/6</url>
+    <connection>scm:svn:https://svn.neo4j.org/assemblies/assembly-pom/trunk</connection>
+    <developerConnection>scm:svn:https://svn.neo4j.org/assemblies/assembly-pom/trunk</developerConnection>
+    <url>https://trac.neo4j.org/browser/assemblies/assembly-pom/trunk</url>
   </scm>
 
   <licenses>
