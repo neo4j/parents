@@ -15,6 +15,28 @@
   <artifactId>parent-central</artifactId>
   <version>7-SNAPSHOT</version>
 
+  <scm>
+    <connection>scm:svn:https://svn.neo4j.org/components/parent-central/trunk</connection>
+    <developerConnection>scm:svn:https://svn.neo4j.org/components/parent-central/trunk</developerConnection>
+    <url>https://trac.neo4j.org/browser/components/</url>
+  </scm>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <ga-id>UA-1192232-15</ga-id>
+    <skinGroupId>org.neo4j.maven.skins</skinGroupId>
+    <skinArtifactId>default-skin</skinArtifactId>
+    <skinVersion>1.0.3</skinVersion>
+    <mavenJavadocPluginVersion>2.7</mavenJavadocPluginVersion>
+    <mavenProjectInfoReportsPluginVersion>2.2</mavenProjectInfoReportsPluginVersion>
+    <clirrMavenPluginVersion>2.2.2</clirrMavenPluginVersion>
+    <jta.groupId>org.apache.geronimo.specs</jta.groupId>
+    <jta.artifactId>geronimo-jta_1.1_spec</jta.artifactId>
+    <jta.version>1.1.1</jta.version>
+    <license-text.header>AGPL-3-header.txt</license-text.header>
+    <short-name>parent-central</short-name>
+  </properties>
+
   <organization>
     <name>The Neo4j Graph Database Project</name>
     <url>http://neo4j.org/</url>
@@ -35,12 +57,6 @@
     </mailingList>
   </mailingLists>
 
-  <scm>
-    <connection>scm:svn:https://svn.neo4j.org/components/parent-central/trunk</connection>
-    <developerConnection>scm:svn:https://svn.neo4j.org/components/parent-central/trunk</developerConnection>
-    <url>https://trac.neo4j.org/browser/components/</url>
-  </scm>
-
   <issueManagement>
     <system>Trac</system>
     <url>https://trac.neo4j.org/query?status=assigned&amp;status=new&amp;status=reopened&amp;component=${project.artifactId}</url>
@@ -52,21 +68,6 @@
       <url>http://www.gnu.org/licenses/agpl-3.0-standalone.html</url>
     </license>
   </licenses>
-
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <ga-id>UA-1192232-15</ga-id>
-    <skinGroupId>org.neo4j.maven.skins</skinGroupId>
-    <skinArtifactId>default-skin</skinArtifactId>
-    <skinVersion>1.0.3</skinVersion>
-    <mavenJavadocPluginVersion>2.7</mavenJavadocPluginVersion>
-    <mavenProjectInfoReportsPluginVersion>2.2</mavenProjectInfoReportsPluginVersion>
-    <clirrMavenPluginVersion>2.2.2</clirrMavenPluginVersion>
-    <jta.groupId>org.apache.geronimo.specs</jta.groupId>
-    <jta.artifactId>geronimo-jta_1.1_spec</jta.artifactId>
-    <jta.version>1.1.1</jta.version>
-    <short-name>parent-central</short-name>
-  </properties>
 
   <developers>
     <developer>
@@ -317,7 +318,7 @@
           <artifactId>wagon-maven-plugin</artifactId>
           <version>1.0-beta-3</version>
         </plugin>
-        <!-- non org.apache.maven.plugins or org.codehaus.*  -->
+        <!-- non org.apache.maven.plugins or org.codehaus.* -->
         <plugin>
           <groupId>org.apache.felix</groupId>
           <artifactId>maven-bundle-plugin</artifactId>
@@ -404,9 +405,16 @@
       <plugin>
         <groupId>com.mycila.maven-license-plugin</groupId>
         <artifactId>maven-license-plugin</artifactId>
+        <dependencies>
+          <dependency>
+            <groupId>org.neo4j.maven</groupId>
+            <artifactId>licenses</artifactId>
+            <version>1-SNAPSHOT</version>
+          </dependency>
+        </dependencies>
         <configuration>
           <strictCheck>true</strictCheck>
-          <header>http://neo4j.org/license-header.txt</header>
+          <header>${license-text.header}</header>
           <includes>
             <include>**/*.java</include>
           </includes>
@@ -496,9 +504,9 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-project-info-reports-plugin</artifactId>
         <version>${mavenProjectInfoReportsPluginVersion}</version>
-        <configuration> 
-          <dependencyLocationsEnabled>false</dependencyLocationsEnabled> 
-          <dependencyDetailsEnabled>false</dependencyDetailsEnabled> 
+        <configuration>
+          <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+          <dependencyDetailsEnabled>false</dependencyDetailsEnabled>
         </configuration>
       </plugin>
       <!-- non org.apache.maven.plugins -->
@@ -518,7 +526,7 @@
         <artifactId>${jta.artifactId}</artifactId>
         <version>${jta.version}</version>
       </dependency>
-      <!--  testing -->
+      <!-- testing -->
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
