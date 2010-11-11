@@ -9,13 +9,13 @@
   <artifactId>parent-pom</artifactId>
   <name>Neo4j parent POM</name>
   <packaging>pom</packaging>
-  <version>14-SNAPSHOT</version>
+  <version>14</version>
   <url>http://components.neo4j.org/</url>
 
   <scm>
-    <connection>scm:svn:https://svn.neo4j.org/components/parent/trunk</connection>
-    <developerConnection>scm:svn:https://svn.neo4j.org/components/parent/trunk</developerConnection>
-    <url>https://trac.neo4j.org/browser/components/</url>
+    <connection>scm:svn:https://svn.neo4j.org/components/parent/tags/14</connection>
+    <developerConnection>scm:svn:https://svn.neo4j.org/components/parent/tags/14</developerConnection>
+    <url>scm:svn:https://svn.neo4j.org/components/parent/tags/14</url>
   </scm>
 
   <issueManagement>
