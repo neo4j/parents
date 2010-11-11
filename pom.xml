@@ -142,6 +142,20 @@
         </includes>
       </resource>
     </resources>
+    <testResources>
+      <testResource>
+        <directory>src/test/resources</directory>
+      </testResource>
+      <testResource>
+        <directory>${basedir}</directory>
+        <targetPath>META-INF</targetPath>
+        <includes>
+          <include>NOTICE.txt</include>
+          <include>LICENSE.txt</include>
+          <include>COPYRIGHT.txt</include>
+        </includes>
+      </testResource>
+    </testResources>
     <pluginManagement>
       <plugins>
         <plugin>
@@ -409,7 +423,7 @@
           <dependency>
             <groupId>org.neo4j.maven</groupId>
             <artifactId>licenses</artifactId>
-            <version>1-SNAPSHOT</version>
+            <version>1</version>
           </dependency>
         </dependencies>
         <configuration>
