@@ -67,7 +67,8 @@
               <includeGroupIds>org.neo4j</includeGroupIds>
               <!-- neo4j-apoc has no sources -->
               <!-- neo4j-shell or neo4j-udc isn't what users look for here -->
-              <excludeArtifactIds>neo4j,neo4j-apoc,neo4j-shell,neo4j-udc</excludeArtifactIds>
+              <!-- neo4j-manual has no code of any kind -->
+              <excludeArtifactIds>neo4j,neo4j-apoc,neo4j-shell,neo4j-udc,neo4j-manual</excludeArtifactIds>
             </configuration>
           </execution>
         </executions>
