@@ -10,7 +10,7 @@
     transactional Java persistence engine that stores data structured in graphs
     rather than in tables.</description>
   <packaging>pom</packaging>
-  <url>http://components.neo4j.org/</url>
+  <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
   <groupId>org.neo4j</groupId>
   <artifactId>parent-central</artifactId>
   <version>9-SNAPSHOT</version>
@@ -640,7 +640,7 @@
     </snapshotRepository>
     <site>
       <id>neo4j-site</id>
-      <url>scpexe://components.neo4j.org/home/neo/components</url>
+      <url>scpexe://components.neo4j.org/home/neo/components/${project.artifactId}/${project.version}</url>
     </site>
   </distributionManagement>
 
