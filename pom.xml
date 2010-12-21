@@ -11,7 +11,7 @@
   <packaging>pom</packaging>
   <name>Assembly pom</name>
   <description>Parent pom for assemblies.</description>
-  <url>http://components.neo4j.org/${project.artifactId}</url>
+  <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
 
   <properties>
     <short-name>assembly-pom</short-name>
@@ -39,7 +39,7 @@
     </snapshotRepository>
     <site>
       <id>neo4j-site</id>
-      <url>scpexe://components.neo4j.org/home/neo/components</url>
+      <url>scpexe://components.neo4j.org/home/neo/components/${project.artifactId}/${project.version}</url>
     </site>
   </distributionManagement>
 
@@ -170,3 +170,4 @@
   </developers>
 
 </project>
+
