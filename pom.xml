@@ -10,7 +10,7 @@
   <name>Neo4j parent POM</name>
   <packaging>pom</packaging>
   <version>15-SNAPSHOT</version>
-  <url>http://components.neo4j.org/</url>
+  <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
 
   <scm>
     <connection>scm:svn:https://svn.neo4j.org/components/parent/trunk</connection>
@@ -62,8 +62,9 @@
     </snapshotRepository>
     <site>
       <id>neo4j-site</id>
-      <url>scpexe://components.neo4j.org/home/neo/components</url>
+      <url>scpexe://components.neo4j.org/home/neo/components/${project.artifactId}/${project.version}</url>
     </site>
   </distributionManagement>
 
 </project>
+
