@@ -476,7 +476,7 @@
               <value>http://download.oracle.com/javase/6/docs/api/</value>
             </property>
           </javaApiLinks>
-          <excludePackageNames>*.impl.*:org.neo4j.shell:org.neo4j.remote.inspect:org.neo4j.onlinebackup.ha:org.neo4j.onlinebackup.net:org.neo4j.ext.udc
+          <excludePackageNames>*.impl.*:org.neo4j.shell:org.neo4j.remote.inspect:org.neo4j.onlinebackup.ha:org.neo4j.onlinebackup.net:org.neo4j.ext.udc:org.neo4j.kernel.ha:org.neo4j.kernel.ha.*
           </excludePackageNames>
           <groups>
             <group>
