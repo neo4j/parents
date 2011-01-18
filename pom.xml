@@ -341,7 +341,7 @@
         <plugin>
           <groupId>com.mycila.maven-license-plugin</groupId>
           <artifactId>maven-license-plugin</artifactId>
-          <version>1.8.0</version>
+          <version>1.9.0</version>
         </plugin>
         <plugin>
           <groupId>org.ops4j</groupId>
@@ -402,8 +402,8 @@
             </Export-Package>
             <Private-Package>${bundle.namespace}.impl.*
             </Private-Package>
-            <!-- Allow each bundle to override these settings by creating 
-              a file named osgi.bnd in the same directory as the component's pom.xml. See 
+            <!-- Allow each bundle to override these settings by creating
+              a file named osgi.bnd in the same directory as the component's pom.xml. See
               components/kernel/trunk/osgi.bnd for an example. -->
             <_include>-osgi.bnd</_include>
           </instructions>
@@ -423,7 +423,7 @@
           <dependency>
             <groupId>org.neo4j.maven</groupId>
             <artifactId>licenses</artifactId>
-            <version>1</version>
+            <version>2</version>
           </dependency>
         </dependencies>
         <configuration>
@@ -431,7 +431,17 @@
           <header>${license-text.header}</header>
           <includes>
             <include>**/*.java</include>
+            <include>**/*.js</include>
+            <include>**/*.scala</include>
+            <include>**/*.xml</include>
           </includes>
+          <excludes>
+            <exclude>**/lib/*.js</exclude>
+            <exclude>**/lib/**/*.js</exclude>
+          </excludes>
+          <mapping>
+            <scala>JAVADOC_STYLE</scala>
+          </mapping>
         </configuration>
       </plugin>
       <plugin>
@@ -555,13 +565,13 @@
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
-        <version>4.8.1</version>
+        <version>4.8.2</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit-dep</artifactId>
-        <version>4.8.1</version>
+        <version>4.8.2</version>
         <scope>test</scope>
       </dependency>
       <dependency>
