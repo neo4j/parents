@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.sonatype.oss</groupId>
@@ -7,7 +8,8 @@
   </parent>
   <name>The Neo4j Graph Database Project</name>
   <description>Neo4j is a graph database. It is an embedded, disk-based, fully
-    transactional Java persistence engine that stores data structured in graphs
+    transactional Java persistence engine that
+    stores data structured in graphs
     rather than in tables.</description>
   <packaging>pom</packaging>
   <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
@@ -59,7 +61,8 @@
 
   <issueManagement>
     <system>Trac</system>
-    <url>https://trac.neo4j.org/query?status=assigned&amp;status=new&amp;status=reopened&amp;component=${project.artifactId}</url>
+    <url>https://trac.neo4j.org/query?status=assigned&amp;status=new&amp;status=reopened&amp;component=${project.artifactId}
+    </url>
   </issueManagement>
 
   <licenses>
@@ -402,9 +405,8 @@
             </Export-Package>
             <Private-Package>${bundle.namespace}.impl.*
             </Private-Package>
-            <!-- Allow each bundle to override these settings by creating
-              a file named osgi.bnd in the same directory as the component's pom.xml. See
-              components/kernel/trunk/osgi.bnd for an example. -->
+            <!-- Allow each bundle to override these settings by creating a file named osgi.bnd in the same directory as 
+              the component's pom.xml. See components/kernel/trunk/osgi.bnd for an example. -->
             <_include>-osgi.bnd</_include>
           </instructions>
         </configuration>
@@ -426,6 +428,16 @@
             <version>2</version>
           </dependency>
         </dependencies>
+        <executions>
+          <execution>
+            <id>check-licenses</id>
+            <!-- fail as early as possible -->
+            <phase>initialize</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
         <configuration>
           <strictCheck>true</strictCheck>
           <header>${license-text.header}</header>
@@ -452,6 +464,16 @@
             <goals>
               <goal>test-jar</goal>
             </goals>
+          </execution>
+          <execution>
+            <id>attach-docs</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+            <configuration>
+              <classifier>docs</classifier>
+              <classesDirectory>src/docs</classesDirectory>
+            </configuration>
           </execution>
         </executions>
       </plugin>
@@ -654,5 +676,125 @@
     </site>
   </distributionManagement>
 
+  <profiles>
+    <profile>
+      <id>do-not-attach-tests-jar</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+        <file>
+          <missing>src/test</missing>
+        </file>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-jar-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-test-jar</id>
+                <phase>none</phase>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>do-not-attach-docs-jar</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+        <file>
+          <missing>src/docs</missing>
+        </file>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-jar-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-docs</id>
+                <phase>none</phase>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>dev</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-source-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-source</id>
+                <phase>none</phase>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-javadocs</id>
+                <phase>none</phase>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <artifactId>maven-jar-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-test-jar</id>
+                <phase>none</phase>
+              </execution>
+              <execution>
+                <id>attach-docs</id>
+                <phase>none</phase>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>com.mycila.maven-license-plugin</groupId>
+            <artifactId>maven-license-plugin</artifactId>
+            <!-- inserting licenses is better than checking for them -->
+            <executions>
+              <execution>
+                <id>check-licenses</id>
+                <phase>none</phase>
+              </execution>
+              <execution>
+                <id>insert-licenses</id>
+                <phase>initialize</phase>
+                <goals>
+                  <goal>format</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+      <reporting>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <version>${mavenJavadocPluginVersion}</version>
+            <inherited>true</inherited>
+            <reportSets>
+              <reportSet>
+                <id>javadoc-report</id>
+                <reports />
+              </reportSet>
+            </reportSets>
+          </plugin>
+        </plugins>
+      </reporting>
+    </profile>
+  </profiles>
 </project>
-
