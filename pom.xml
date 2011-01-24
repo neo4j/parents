@@ -14,12 +14,12 @@
   <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
   <groupId>org.neo4j</groupId>
   <artifactId>parent-central</artifactId>
-  <version>10-SNAPSHOT</version>
+  <version>10</version>
 
   <scm>
-    <connection>scm:svn:https://svn.neo4j.org/components/parent-central/trunk</connection>
-    <developerConnection>scm:svn:https://svn.neo4j.org/components/parent-central/trunk</developerConnection>
-    <url>https://trac.neo4j.org/browser/components/</url>
+    <connection>scm:svn:https://svn.neo4j.org/components/parent-central/tags/10</connection>
+    <developerConnection>scm:svn:https://svn.neo4j.org/components/parent-central/tags/10</developerConnection>
+    <url>scm:svn:https://svn.neo4j.org/components/parent-central/tags/10</url>
   </scm>
 
   <properties>
