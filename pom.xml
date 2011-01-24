@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.sonatype.oss</groupId>
@@ -184,6 +183,11 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>2.3.2</version>
+          <configuration>
+            <source>1.6</source>
+            <target>1.6</target>
+            <encoding>${project.build.sourceEncoding}</encoding>
+          </configuration>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -217,6 +221,14 @@
           <configuration>
             <keyname>Neo Technology Build Server</keyname>
             <useAgent>true</useAgent>
+          </configuration>
+        </plugin>
+        <plugin>
+          <artifactId>maven-idea-plugin</artifactId>
+          <version>2.2</version>
+          <configuration>
+            <linkModules>true</linkModules>
+            <jdkLevel>1.6</jdkLevel>
           </configuration>
         </plugin>
         <plugin>
@@ -362,11 +374,6 @@
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>1.5</source>
-          <target>1.5</target>
-          <encoding>${project.build.sourceEncoding}</encoding>
-        </configuration>
       </plugin>
       <plugin>
         <artifactId>maven-dependency-plugin</artifactId>
@@ -405,7 +412,7 @@
             </Export-Package>
             <Private-Package>${bundle.namespace}.impl.*
             </Private-Package>
-            <!-- Allow each bundle to override these settings by creating a file named osgi.bnd in the same directory as 
+            <!-- Allow each bundle to override these settings by creating a file named osgi.bnd in the same directory as
               the component's pom.xml. See components/kernel/trunk/osgi.bnd for an example. -->
             <_include>-osgi.bnd</_include>
           </instructions>
@@ -779,22 +786,6 @@
           </plugin>
         </plugins>
       </build>
-      <reporting>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <version>${mavenJavadocPluginVersion}</version>
-            <inherited>true</inherited>
-            <reportSets>
-              <reportSet>
-                <id>javadoc-report</id>
-                <reports />
-              </reportSet>
-            </reportSets>
-          </plugin>
-        </plugins>
-      </reporting>
     </profile>
   </profiles>
 </project>
