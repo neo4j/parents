@@ -31,6 +31,7 @@
     <mavenJavadocPluginVersion>2.7</mavenJavadocPluginVersion>
     <mavenProjectInfoReportsPluginVersion>2.2</mavenProjectInfoReportsPluginVersion>
     <clirrMavenPluginVersion>2.2.2</clirrMavenPluginVersion>
+    <mavenJxrPluginVersion>2.2</mavenJxrPluginVersion>
     <jta.groupId>org.apache.geronimo.specs</jta.groupId>
     <jta.artifactId>geronimo-jta_1.1_spec</jta.artifactId>
     <jta.version>1.1.1</jta.version>
@@ -249,7 +250,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jxr-plugin</artifactId>
-          <version>2.2</version>
+          <version>${mavenJxrPluginVersion}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -457,6 +458,7 @@
           <excludes>
             <exclude>**/lib/*.js</exclude>
             <exclude>**/lib/**/*.js</exclude>
+            <exclude>**/javascript/vend/**</exclude>
           </excludes>
           <mapping>
             <scala>JAVADOC_STYLE</scala>
@@ -563,6 +565,11 @@
             </reports>
           </reportSet>
         </reportSets>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jxr-plugin</artifactId>
+        <version>${mavenJxrPluginVersion}</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
