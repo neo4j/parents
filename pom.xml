@@ -3,7 +3,7 @@
   <parent>
     <artifactId>parent-pom</artifactId>
     <groupId>org.neo4j</groupId>
-    <version>14</version>
+    <version>15</version>
   </parent>
   <groupId>org.neo4j.assembly</groupId>
   <artifactId>assembly-pom</artifactId>
@@ -31,12 +31,6 @@
   </licenses>
 
   <distributionManagement>
-    <snapshotRepository>
-      <id>snapshots@repo.neo4j.org</id>
-      <name>snapshots@repo.neo4j.org</name>
-      <uniqueVersion>false</uniqueVersion>
-      <url>https://repo.neo4j.org/content/repositories/snapshots</url>
-    </snapshotRepository>
     <site>
       <id>neo4j-site</id>
       <url>scpexe://components.neo4j.org/home/neo/components/${project.artifactId}/${project.version}</url>
@@ -170,4 +164,3 @@
   </developers>
 
 </project>
-
