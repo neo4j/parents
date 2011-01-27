@@ -736,7 +736,7 @@
       </build>
     </profile>
     <profile>
-      <id>dev</id>
+      <id>neo4j-dev</id>
       <activation>
         <activeByDefault>false</activeByDefault>
       </activation>
