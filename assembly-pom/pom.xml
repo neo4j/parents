@@ -1,0 +1,166 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>parent-pom</artifactId>
+    <groupId>org.neo4j</groupId>
+    <version>15</version>
+  </parent>
+  <groupId>org.neo4j.assembly</groupId>
+  <artifactId>assembly-pom</artifactId>
+  <version>9-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>Assembly pom</name>
+  <description>Parent pom for assemblies.</description>
+  <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
+
+  <properties>
+    <short-name>assembly-pom</short-name>
+  </properties>
+  
+  <scm>
+    <connection>scm:svn:https://svn.neo4j.org/assemblies/assembly-pom/trunk</connection>
+    <developerConnection>scm:svn:https://svn.neo4j.org/assemblies/assembly-pom/trunk</developerConnection>
+    <url>https://trac.neo4j.org/browser/assemblies/assembly-pom/trunk</url>
+  </scm>
+
+  <licenses>
+    <license>
+      <name>GNU Affero General Public License, Version 3</name>
+      <url>http://www.gnu.org/licenses/agpl-3.0-standalone.html</url>
+    </license>
+  </licenses>
+
+  <distributionManagement>
+    <site>
+      <id>neo4j-site</id>
+      <url>scpexe://components.neo4j.org/home/neo/components/${project.artifactId}/${project.version}</url>
+    </site>
+  </distributionManagement>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-release-plugin</artifactId>
+        <configuration>
+          <tagBase>https://svn.neo4j.org/assemblies/${short-name}/tags</tagBase>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>get-javadoc-sources</id>
+            <phase>generate-sources</phase>
+            <inherited>true</inherited>
+            <goals>
+              <goal>unpack-dependencies</goal>
+            </goals>
+            <configuration>
+              <classifier>sources</classifier>
+              <outputDirectory>${project.build.directory}/sources</outputDirectory>
+              <includeGroupIds>org.neo4j</includeGroupIds>
+              <!-- neo4j-apoc has no sources -->
+              <!-- neo4j-shell or neo4j-udc isn't what users look for here -->
+              <!-- neo4j-manual has no code of any kind -->
+              <excludeArtifactIds>neo4j,neo4j-apoc,neo4j-shell,neo4j-udc,neo4j-manual</excludeArtifactIds>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>create-javadocs</id>
+            <inherited>true</inherited>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>javadoc</goal>
+            </goals>
+            <configuration>
+              <sourcepath>${project.build.directory}/sources</sourcepath>
+              <reportOutputDirectory>${project.build.directory}/apidocs</reportOutputDirectory>
+            </configuration>
+          </execution>
+          <execution>
+            <id>attach-javadocs</id>
+            <phase>none</phase>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-source-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>attach-source</id>
+            <phase>none</phase>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>wagon-maven-plugin</artifactId>
+        <configuration>
+          <fromDir>${project.build.directory}</fromDir>
+          <url>scpexe://dist-server</url>
+          <toDir>$HOME/public_html/dist</toDir>
+          <includes>*.zip,*.tar.gz,*install.jar,*.exe</includes>
+        </configuration>
+        <executions>
+          <execution>
+            <id>upload-to-dist-server</id>
+            <goals>
+              <goal>upload</goal>
+            </goals>
+            <phase>deploy</phase>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <!-- fix issue with appassembler -->
+        <version>2.4</version>
+      </plugin>
+    </plugins>
+  </build>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <reportSets>
+          <reportSet>
+            <id>javadoc-aggregated-report</id>
+            <reports>
+              <report>aggregate</report>
+            </reports>
+            <configuration>
+              <destDir>apidocs</destDir>
+              <sourcepath>${project.build.directory}/sources</sourcepath>
+            </configuration>
+          </reportSet>
+        </reportSets>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>clirr-maven-plugin</artifactId>
+        <reportSets>
+          <reportSet />
+        </reportSets>
+      </plugin>
+    </plugins>
+  </reporting>
+
+  <developers>
+    <developer>
+      <id>andersn</id>
+      <name>Anders Nawroth</name>
+      <email>anders [at] neotechnology.com</email>
+      <timezone>+1</timezone>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
+
+</project>
