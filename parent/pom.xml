@@ -1,0 +1,56 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.neo4j</groupId>
+    <artifactId>parent-central</artifactId>
+    <version>10</version>
+  </parent>
+  <groupId>org.neo4j</groupId>
+  <artifactId>parent-pom</artifactId>
+  <name>Neo4j parent POM</name>
+  <packaging>pom</packaging>
+  <version>16-SNAPSHOT</version>
+  <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
+
+  <scm>
+    <connection>scm:svn:https://svn.neo4j.org/components/parent/trunk</connection>
+    <developerConnection>scm:svn:https://svn.neo4j.org/components/parent/trunk</developerConnection>
+    <url>https://trac.neo4j.org/browser/components/</url>
+  </scm>
+
+  <issueManagement>
+    <system>Trac</system>
+    <url>https://trac.neo4j.org/query?status=assigned&amp;status=new&amp;status=reopened&amp;component=${project.artifactId}
+    </url>
+  </issueManagement>
+
+  <licenses>
+    <license>
+      <name>GNU Affero General Public License, Version 3</name>
+      <url>http://www.gnu.org/licenses/agpl-3.0-standalone.html</url>
+    </license>
+  </licenses>
+
+  <properties>
+    <short-name>parent</short-name>
+  </properties>
+  <distributionManagement>
+    <repository>
+      <id>releases@repo.neo4j.org</id>
+      <name>releases@repo.neo4j.org</name>
+      <uniqueVersion>false</uniqueVersion>
+      <url>https://repo.neo4j.org/content/repositories/releases</url>
+    </repository>
+    <snapshotRepository>
+      <id>snapshots@repo.neo4j.org</id>
+      <name>snapshots@repo.neo4j.org</name>
+      <uniqueVersion>false</uniqueVersion>
+      <url>https://repo.neo4j.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <site>
+      <id>neo4j-site</id>
+      <url>scpexe://components.neo4j.org/home/neo/components/${project.artifactId}/${project.version}</url>
+    </site>
+  </distributionManagement>
+
+</project>
