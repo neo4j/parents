@@ -736,7 +736,7 @@
       </build>
     </profile>
     <profile>
-      <id>neo4j-dev</id>
+      <id>neodev</id>
       <activation>
         <activeByDefault>false</activeByDefault>
       </activation>
@@ -763,10 +763,6 @@
           <plugin>
             <artifactId>maven-jar-plugin</artifactId>
             <executions>
-              <execution>
-                <id>attach-test-jar</id>
-                <phase>none</phase>
-              </execution>
               <execution>
                 <id>attach-docs</id>
                 <phase>none</phase>
