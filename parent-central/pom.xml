@@ -450,10 +450,10 @@
           <strictCheck>true</strictCheck>
           <header>${license-text.header}</header>
           <includes>
-            <include>**/*.java</include>
-            <include>**/*.js</include>
-            <include>**/*.scala</include>
-            <include>**/*.xml</include>
+            <include>src/**/*.java</include>
+            <include>src/**/*.js</include>
+            <include>src/**/*.scala</include>
+            <include>src/**/*.xml</include>
           </includes>
           <excludes>
             <exclude>**/lib/*.js</exclude>
