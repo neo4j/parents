@@ -1,0 +1,64 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>parent-central</artifactId>
+    <groupId>org.neo4j</groupId>
+    <version>6</version>
+  </parent>
+  <groupId>org.neo4j.examples</groupId>
+  <artifactId>examples-assembly-descriptor</artifactId>
+  <version>2-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <name>Neo4j - Examples Assembly</name>
+  <description>Common assembly descriptor for example projects.</description>
+  <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
+
+  <scm>
+    <connection>scm:svn:https://svn.neo4j.org/examples/examples-assembly-descriptor/trunk</connection>
+    <developerConnection>scm:svn:https://svn.neo4j.org/examples/examples-assembly-descriptor/trunk</developerConnection>
+    <url>https://trac.neo4j.org/browser/examples/examples-assembly-descriptor/trunk</url>
+  </scm>
+
+  <properties>
+    <short-name>examples-assembly-descriptor</short-name>
+  </properties>
+
+  <licenses>
+    <license>
+      <name>GNU Affero General Public License, Version 3</name>
+      <url>http://www.gnu.org/licenses/agpl-3.0-standalone.html</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>andersn</id>
+      <name>Anders Nawroth</name>
+      <email>anders [at] neotechnology.com</email>
+      <timezone>+1</timezone>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-release-plugin</artifactId>
+        <configuration>
+          <tagBase>https://svn.neo4j.org/examples/${short-name}/tags</tagBase>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <distributionManagement>
+    <site>
+      <id>neo4j-site</id>
+      <url>scpexe://components.neo4j.org/home/neo/components/${project.artifactId}/${project.version}</url>
+    </site>
+  </distributionManagement>
+
+</project>
+
