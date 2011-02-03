@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.sonatype.oss</groupId>
+    <artifactId>oss-parent</artifactId>
+    <version>5</version>
+  </parent>
+  <groupId>org.neo4j.maven</groupId>
+  <artifactId>build-configuration</artifactId>
+  <packaging>pom</packaging>
+  <name>Neo4j Build Configuration</name>
+  <description>Builds the different parent poms and related build helpers.</description>
+  <version>16-SNAPSHOT</version>
+  <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
+  
+  <modules>
+    <module>licenses</module>
+    <module>maven-skin</module>
+    <module>parent-central</module>
+    <module>parent-pom</module>
+    <module>examples-assembly-descriptor</module>
+    <module>assembly-pom</module>
+    <module>examples-pom</module>
+  </modules>
+  
+  <licenses>
+    <license>
+      <name>GNU Affero General Public License, Version 3</name>
+      <url>http://www.gnu.org/licenses/agpl-3.0-standalone.html</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>andersn</id>
+      <name>Anders Nawroth</name>
+      <email>anders [at] neotechnology.com</email>
+      <timezone>+1</timezone>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
+
+  <distributionManagement>
+    <site>
+      <id>neo4j-site</id>
+      <url>scpexe://components.neo4j.org/home/neo/components/${project.artifactId}/${project.version}</url>
+    </site>
+  </distributionManagement>
+
+</project>
+
