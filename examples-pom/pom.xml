@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <parent>
-    <groupId>org.neo4j.assembly</groupId>
-    <artifactId>assembly-pom</artifactId>
+    <artifactId>parent-central</artifactId>
+    <groupId>org.neo4j</groupId>
     <version>16-SNAPSHOT</version>
-    <relativePath>../assembly-pom/pom.xml</relativePath>
+    <relativePath>../parent-central/pom.xml</relativePath>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.neo4j.examples</groupId>
@@ -18,12 +18,6 @@
     <short-name>examples-pom</short-name>
   </properties>
   
-  <scm>
-    <connection>scm:svn:https://svn.neo4j.org/examples/examples-pom/trunk</connection>
-    <developerConnection>scm:svn:https://svn.neo4j.org/examples/examples-pom/trunk</developerConnection>
-    <url>https://trac.neo4j.org/browser/examples/examples-pom/trunk</url>
-  </scm>
-
   <licenses>
     <license>
       <name>GNU Affero General Public License, Version 3</name>
@@ -33,6 +27,27 @@
 
   <build>
     <plugins>
+      <plugin>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>get-javadoc-sources</id>
+            <phase>generate-sources</phase>
+            <inherited>true</inherited>
+            <goals>
+              <goal>unpack-dependencies</goal>
+            </goals>
+            <configuration>
+              <classifier>sources</classifier>
+              <outputDirectory>${project.build.directory}/sources</outputDirectory>
+              <includeGroupIds>org.neo4j</includeGroupIds>
+              <!-- neo4j-shell or neo4j-udc isn't what users look for here -->
+              <!-- neo4j-manual has no code of any kind -->
+              <excludeArtifactIds>neo4j,neo4j-shell,neo4j-udc,neo4j-manual</excludeArtifactIds>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <artifactId>maven-site-plugin</artifactId>
         <executions>
@@ -80,23 +95,73 @@
         <artifactId>maven-javadoc-plugin</artifactId>
         <executions>
           <execution>
-            <id>create-javadocs</id>
-            <phase>none</phase>
-          </execution>
-          <execution>
             <id>attach-javadocs</id>
             <phase>none</phase>
           </execution>
         </executions>
       </plugin>
+       <plugin>
+        <artifactId>maven-source-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>attach-source</id>
+            <phase>none</phase>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
-        <artifactId>maven-release-plugin</artifactId>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>wagon-maven-plugin</artifactId>
         <configuration>
-          <tagBase>https://svn.neo4j.org/examples/${short-name}/tags</tagBase>
+          <fromDir>${project.build.directory}</fromDir>
+          <url>scpexe://dist-server</url>
+          <toDir>$HOME/public_html/dist</toDir>
+          <includes>*.zip,*.tar.gz,*install.jar,*.exe</includes>
         </configuration>
+        <executions>
+          <execution>
+            <id>upload-to-dist-server</id>
+            <goals>
+              <goal>upload</goal>
+            </goals>
+            <phase>deploy</phase>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <!-- fix issue with appassembler -->
+        <version>2.4</version>
       </plugin>
     </plugins>
   </build>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <reportSets>
+          <reportSet>
+            <id>javadoc-aggregated-report</id>
+            <reports>
+              <report>aggregate</report>
+            </reports>
+            <configuration>
+              <destDir>apidocs</destDir>
+              <sourcepath>${project.build.directory}/sources</sourcepath>
+            </configuration>
+          </reportSet>
+        </reportSets>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>clirr-maven-plugin</artifactId>
+        <reportSets>
+          <reportSet />
+        </reportSets>
+      </plugin>
+    </plugins>
+  </reporting>
 
   <developers>
     <developer>
@@ -111,6 +176,18 @@
   </developers>
 
   <distributionManagement>
+    <repository>
+      <id>releases@repo.neo4j.org</id>
+      <name>releases@repo.neo4j.org</name>
+      <uniqueVersion>false</uniqueVersion>
+      <url>https://repo.neo4j.org/content/repositories/releases</url>
+    </repository>
+    <snapshotRepository>
+      <id>snapshots@repo.neo4j.org</id>
+      <name>snapshots@repo.neo4j.org</name>
+      <uniqueVersion>false</uniqueVersion>
+      <url>https://repo.neo4j.org/content/repositories/snapshots</url>
+    </snapshotRepository>
     <site>
       <id>neo4j-site</id>
       <url>scpexe://components.neo4j.org/home/neo/components/${project.artifactId}/${project.version}</url>

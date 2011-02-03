@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <artifactId>parent-pom</artifactId>
+    <artifactId>parent-central</artifactId>
     <groupId>org.neo4j</groupId>
     <version>16-SNAPSHOT</version>
-    <relativePath>../parent/pom.xml</relativePath>
+    <relativePath>../parent-central/pom.xml</relativePath>
   </parent>
   <groupId>org.neo4j.assembly</groupId>
   <artifactId>assembly-pom</artifactId>
@@ -17,12 +17,6 @@
   <properties>
     <short-name>assembly-pom</short-name>
   </properties>
-  
-  <scm>
-    <connection>scm:svn:https://svn.neo4j.org/assemblies/assembly-pom/trunk</connection>
-    <developerConnection>scm:svn:https://svn.neo4j.org/assemblies/assembly-pom/trunk</developerConnection>
-    <url>https://trac.neo4j.org/browser/assemblies/assembly-pom/trunk</url>
-  </scm>
 
   <licenses>
     <license>
@@ -31,21 +25,8 @@
     </license>
   </licenses>
 
-  <distributionManagement>
-    <site>
-      <id>neo4j-site</id>
-      <url>scpexe://components.neo4j.org/home/neo/components/${project.artifactId}/${project.version}</url>
-    </site>
-  </distributionManagement>
-
   <build>
     <plugins>
-      <plugin>
-        <artifactId>maven-release-plugin</artifactId>
-        <configuration>
-          <tagBase>https://svn.neo4j.org/assemblies/${short-name}/tags</tagBase>
-        </configuration>
-      </plugin>
       <plugin>
         <artifactId>maven-dependency-plugin</artifactId>
         <executions>
@@ -60,10 +41,9 @@
               <classifier>sources</classifier>
               <outputDirectory>${project.build.directory}/sources</outputDirectory>
               <includeGroupIds>org.neo4j</includeGroupIds>
-              <!-- neo4j-apoc has no sources -->
               <!-- neo4j-shell or neo4j-udc isn't what users look for here -->
               <!-- neo4j-manual has no code of any kind -->
-              <excludeArtifactIds>neo4j,neo4j-apoc,neo4j-shell,neo4j-udc,neo4j-manual</excludeArtifactIds>
+              <excludeArtifactIds>neo4j,neo4j-shell,neo4j-udc,neo4j-manual</excludeArtifactIds>
             </configuration>
           </execution>
         </executions>
@@ -163,5 +143,24 @@
       </roles>
     </developer>
   </developers>
+
+  <distributionManagement>
+    <repository>
+      <id>releases@repo.neo4j.org</id>
+      <name>releases@repo.neo4j.org</name>
+      <uniqueVersion>false</uniqueVersion>
+      <url>https://repo.neo4j.org/content/repositories/releases</url>
+    </repository>
+    <snapshotRepository>
+      <id>snapshots@repo.neo4j.org</id>
+      <name>snapshots@repo.neo4j.org</name>
+      <uniqueVersion>false</uniqueVersion>
+      <url>https://repo.neo4j.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <site>
+      <id>neo4j-site</id>
+      <url>scpexe://components.neo4j.org/home/neo/components/${project.artifactId}/${project.version}</url>
+    </site>
+  </distributionManagement>
 
 </project>

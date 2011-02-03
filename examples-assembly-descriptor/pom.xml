@@ -14,12 +14,6 @@
   <description>Common assembly descriptor for example projects.</description>
   <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
 
-  <scm>
-    <connection>scm:svn:https://svn.neo4j.org/examples/examples-assembly-descriptor/trunk</connection>
-    <developerConnection>scm:svn:https://svn.neo4j.org/examples/examples-assembly-descriptor/trunk</developerConnection>
-    <url>https://trac.neo4j.org/browser/examples/examples-assembly-descriptor/trunk</url>
-  </scm>
-
   <properties>
     <short-name>examples-assembly-descriptor</short-name>
   </properties>
@@ -62,4 +56,3 @@
   </distributionManagement>
 
 </project>
-
