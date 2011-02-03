@@ -15,9 +15,9 @@
   <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
   
   <scm>
-    <connection></connection>
-    <developerConnection></developerConnection>
-    <url></url>
+    <connection>scm:git:git://github.com/neo4j/parents.git</connection>
+    <developerConnection>scm:git:git@github.com:neo4j/parents.git</developerConnection>
+    <url>https://github.com/neo4j/parents</url>
   </scm>
 
   <properties>
