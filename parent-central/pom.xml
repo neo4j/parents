@@ -14,13 +14,7 @@
   <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
   <groupId>org.neo4j</groupId>
   <artifactId>parent-central</artifactId>
-  <version>11-SNAPSHOT</version>
-
-  <scm>
-    <connection>scm:svn:https://svn.neo4j.org/components/parent-central/trunk</connection>
-    <developerConnection>scm:svn:https://svn.neo4j.org/components/parent-central/trunk</developerConnection>
-    <url>https://trac.neo4j.org/browser/components/</url>
-  </scm>
+  <version>16-SNAPSHOT</version>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -279,6 +273,11 @@
           <configuration>
             <encoding>${project.build.sourceEncoding}</encoding>
           </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-scm-plugin</artifactId>
+          <version>1.4</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>

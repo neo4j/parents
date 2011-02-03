@@ -2,7 +2,8 @@
   <parent>
     <groupId>org.neo4j.assembly</groupId>
     <artifactId>assembly-pom</artifactId>
-    <version>8</version>
+    <version>16-SNAPSHOT</version>
+    <relativePath>../assembly-pom/pom.xml</relativePath>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.neo4j.examples</groupId>
@@ -10,7 +11,7 @@
   <packaging>pom</packaging>
   <name>Examples pom</name>
   <description>Examples packaging configuration</description>
-  <version>9-SNAPSHOT</version>
+  <version>16-SNAPSHOT</version>
   <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
   
   <properties>

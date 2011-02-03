@@ -3,11 +3,12 @@
   <parent>
     <artifactId>parent-pom</artifactId>
     <groupId>org.neo4j</groupId>
-    <version>15</version>
+    <version>16-SNAPSHOT</version>
+    <relativePath>../parent/pom.xml</relativePath>
   </parent>
   <groupId>org.neo4j.assembly</groupId>
   <artifactId>assembly-pom</artifactId>
-  <version>9-SNAPSHOT</version>
+  <version>16-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Assembly pom</name>
   <description>Parent pom for assemblies.</description>
