@@ -27,7 +27,6 @@
   <modules>
     <module>licenses</module>
     <module>maven-skin</module>
-    <module>parent-central</module>
     <module>parent</module>
     <module>examples-assembly-descriptor</module>
     <module>assembly-pom</module>
