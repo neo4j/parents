@@ -3,13 +3,13 @@
   <parent>
     <groupId>org.neo4j</groupId>
     <artifactId>parent-central</artifactId>
-    <version>16-SNAPSHOT</version>
+    <version>17</version>
   </parent>
   <groupId>org.neo4j</groupId>
   <artifactId>parent-pom</artifactId>
   <name>Neo4j parent POM</name>
   <packaging>pom</packaging>
-  <version>16-SNAPSHOT</version>
+  <version>17-SNAPSHOT</version>
   <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
 
   <licenses>
