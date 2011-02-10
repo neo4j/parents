@@ -7,7 +7,7 @@
   </parent>
   <groupId>org.neo4j.assembly</groupId>
   <artifactId>assembly-pom</artifactId>
-  <version>18</version>
+  <version>19-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Assembly pom</name>
   <description>Parent pom for assemblies.</description>
