@@ -10,7 +10,7 @@
   <packaging>pom</packaging>
   <name>Neo4j Build Configuration</name>
   <description>Builds the different parent poms and related build helpers.</description>
-  <version>20-SNAPSHOT</version>
+  <version>20</version>
   <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
   
   <scm>
