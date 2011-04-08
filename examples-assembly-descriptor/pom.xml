@@ -3,7 +3,7 @@
   <parent>
     <artifactId>parent-central</artifactId>
     <groupId>org.neo4j</groupId>
-    <version>19</version>
+    <version>20</version>
   </parent>
   <groupId>org.neo4j.examples</groupId>
   <artifactId>examples-assembly-descriptor</artifactId>
