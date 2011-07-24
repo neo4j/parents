@@ -24,29 +24,6 @@
     </license>
   </licenses>
 
-  <developers>
-    <developer>
-      <id>andersn</id>
-      <name>Anders Nawroth</name>
-      <email>anders [at] neotechnology.com</email>
-      <timezone>+1</timezone>
-      <roles>
-        <role>Developer</role>
-      </roles>
-    </developer>
-  </developers>
-
-  <build>
-    <plugins>
-      <plugin>
-        <artifactId>maven-release-plugin</artifactId>
-        <configuration>
-          <tagBase>https://svn.neo4j.org/examples/${short-name}/tags</tagBase>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-
   <distributionManagement>
     <site>
       <id>neo4j-site</id>

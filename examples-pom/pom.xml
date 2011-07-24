@@ -127,11 +127,6 @@
           </execution>
         </executions>
       </plugin>
-      <plugin>
-        <artifactId>maven-deploy-plugin</artifactId>
-        <!-- fix issue with appassembler -->
-        <version>2.4</version>
-      </plugin>
     </plugins>
   </build>
 
@@ -162,18 +157,6 @@
     </plugins>
   </reporting>
 
-  <developers>
-    <developer>
-      <id>andersn</id>
-      <name>Anders Nawroth</name>
-      <email>anders [at] neotechnology.com</email>
-      <timezone>+1</timezone>
-      <roles>
-        <role>Developer</role>
-      </roles>
-    </developer>
-  </developers>
-
   <distributionManagement>
     <repository>
       <id>releases@repo.neo4j.org</id>
@@ -194,3 +177,4 @@
   </distributionManagement>
 
 </project>
+
