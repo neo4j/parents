@@ -10,7 +10,7 @@
   <packaging>pom</packaging>
   <name>Examples pom</name>
   <description>Examples packaging configuration</description>
-  <version>23-SNAPSHOT</version>
+  <version>23</version>
   <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
   
   <properties>
