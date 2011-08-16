@@ -2,8 +2,8 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <artifactId>parent-central</artifactId>
-    <groupId>org.neo4j</groupId>
-    <version>22</version>
+    <groupId>org.neo4j.build</groupId>
+    <version>23</version>
   </parent>
   <groupId>org.neo4j.assembly</groupId>
   <artifactId>assembly-pom</artifactId>
