@@ -3,9 +3,9 @@
   <parent>
     <artifactId>parent-central</artifactId>
     <groupId>org.neo4j.build</groupId>
-    <version>23</version>
+    <version>24</version>
   </parent>
-  <groupId>org.neo4j.assembly</groupId>
+  <groupId>org.neo4j.build</groupId>
   <artifactId>assembly-pom</artifactId>
   <version>24-SNAPSHOT</version>
   <packaging>pom</packaging>
