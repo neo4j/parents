@@ -2,7 +2,7 @@
   <parent>
     <artifactId>parent-central</artifactId>
     <groupId>org.neo4j.build</groupId>
-    <version>25</version>
+    <version>26-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.neo4j.build</groupId>
@@ -10,7 +10,7 @@
   <packaging>pom</packaging>
   <name>Examples pom</name>
   <description>Examples packaging configuration</description>
-  <version>25-SNAPSHOT</version>
+  <version>26-SNAPSHOT</version>
   <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
   
   <properties>

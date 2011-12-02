@@ -3,11 +3,11 @@
   <parent>
     <artifactId>parent-central</artifactId>
     <groupId>org.neo4j.build</groupId>
-    <version>25</version>
+    <version>26-SNAPSHOT</version>
   </parent>
   <groupId>org.neo4j.build</groupId>
   <artifactId>examples-assembly-descriptor</artifactId>
-  <version>25-SNAPSHOT</version>
+  <version>26-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>Neo4j - Examples Assembly</name>
   <description>Common assembly descriptor for example projects.</description>
