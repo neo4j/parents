@@ -9,7 +9,7 @@
   <artifactId>parent-pom</artifactId>
   <name>Neo4j parent POM</name>
   <packaging>pom</packaging>
-  <version>27</version>
+  <version>28-SNAPSHOT</version>
   <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
 
   <licenses>
