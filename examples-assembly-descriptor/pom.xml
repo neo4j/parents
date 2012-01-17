@@ -7,7 +7,7 @@
   </parent>
   <groupId>org.neo4j.build</groupId>
   <artifactId>examples-assembly-descriptor</artifactId>
-  <version>31</version>
+  <version>32-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>Neo4j - Examples Assembly</name>
   <description>Common assembly descriptor for example projects.</description>
