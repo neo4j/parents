@@ -3,7 +3,8 @@
   <parent>
     <groupId>org.neo4j.build</groupId>
     <artifactId>parent-central</artifactId>
-    <version>31</version>
+    <version>32-SNAPSHOT</version>
+    <relativePath>../pom.xml</relativePath>
   </parent>
   <groupId>org.neo4j.build</groupId>
   <artifactId>parent-pom</artifactId>
@@ -11,6 +12,10 @@
   <packaging>pom</packaging>
   <version>32-SNAPSHOT</version>
   <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
+
+  <modules>
+    <module>assembly-pom</module>
+  </modules>
 
   <licenses>
     <license>
