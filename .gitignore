@@ -1,7 +1,6 @@
 *~
 \#*
-*/target/
-/target/
+target/
 *.swp
 .project
 .classpath

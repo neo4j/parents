@@ -545,16 +545,6 @@
               </archive>
             </configuration>
           </execution>
-          <execution>
-            <id>attach-docs</id>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-            <configuration>
-              <classifier>docs</classifier>
-              <classesDirectory>src/docs</classesDirectory>
-            </configuration>
-          </execution>
         </executions>
       </plugin>
       <plugin>
@@ -794,7 +784,7 @@
     <repository>
       <id>neo4j-snapshot-repository</id>
       <name>Neo4j Maven 2 snapshot repository</name>
-      <url>http://m2.neo4j.org/snapshots</url>
+      <url>http://m2.neo4j.org/content/repositories/snapshots/</url>
       <snapshots>
         <enabled>true</enabled>
       </snapshots>
@@ -806,8 +796,8 @@
 
   <distributionManagement>
     <snapshotRepository>
-      <id>snapshots@repo.neo4j.org</id>
-      <name>snapshots@repo.neo4j.org</name>
+      <id>snapshots@m2.neo4j.org</id>
+      <name>snapshots@m2.neo4j.org</name>
       <uniqueVersion>false</uniqueVersion>
       <url>http://m2.neo4j.org/content/repositories/snapshots</url>
     </snapshotRepository>

@@ -27,6 +27,8 @@
     <licensesVersion>7</licensesVersion>
     <license-text.header>AGPL-3-header.txt</license-text.header>
     <short-name>parent-central</short-name>
+    <docs-plugin.filter>false</docs-plugin.filter>
+    <docs-plugin.skip>false</docs-plugin.skip>
   </properties>
 
   <licenses>
@@ -61,6 +63,15 @@
           <artifactId>maven-license-plugin</artifactId>
           <version>1.9.0</version>
         </plugin>
+        <plugin>
+          <groupId>org.neo4j.build.plugins</groupId>
+          <artifactId>docs-maven-plugin</artifactId>
+          <version>2</version>
+          <configuration>
+            <filter>${docs-plugin.filter}</filter>
+            <skipdocs>${docs-plugin.skip}</skipdocs>
+          </configuration>
+        </plugin>
         <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
         <plugin>
           <groupId>org.eclipse.m2e</groupId>
@@ -76,11 +87,36 @@
                     <versionRange>[1.9.0,)</versionRange>
                     <goals>
                       <goal>check</goal>
-                      <goal>format</goal>
                     </goals>
                   </pluginExecutionFilter>
                   <action>
                     <execute />
+                  </action>
+                </pluginExecution>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>com.mycila.maven-license-plugin</groupId>
+                    <artifactId>maven-license-plugin</artifactId>
+                    <versionRange>[1.9.0,)</versionRange>
+                    <goals>
+                      <goal>format</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <ignore />
+                  </action>
+                </pluginExecution>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>org.neo4j.build.plugins</groupId>
+                    <artifactId>docs-maven-plugin</artifactId>
+                    <versionRange>[2,)</versionRange>
+                    <goals>
+                      <goal>assemble</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <ignore />
                   </action>
                 </pluginExecution>
               </pluginExecutions>
@@ -91,6 +127,15 @@
     </pluginManagement>
 
     <plugins>
+      <plugin>
+        <groupId>org.neo4j.build.plugins</groupId>
+        <artifactId>docs-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals><goal>assemble</goal></goals>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <groupId>com.keyboardsamurais.maven</groupId>
         <artifactId>maven-timestamp-plugin</artifactId>
@@ -188,13 +233,11 @@
             </executions>
           </plugin>
           <plugin>
-            <artifactId>maven-jar-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>attach-docs</id>
-                <phase>none</phase>
-              </execution>
-            </executions>
+            <groupId>org.neo4j.build.plugins</groupId>
+            <artifactId>docs-maven-plugin</artifactId>
+            <configuration>
+              <skipdocs>true</skipdocs>
+            </configuration>
           </plugin>
           <plugin>
             <artifactId>maven-site-plugin</artifactId>
