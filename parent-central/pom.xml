@@ -61,7 +61,7 @@
         <plugin>
           <groupId>org.neo4j.build.plugins</groupId>
           <artifactId>license-maven-plugin</artifactId>
-          <version>1-SNAPSHOT</version>
+          <version>3</version>
         </plugin>
         <plugin>
           <groupId>org.neo4j.build.plugins</groupId>
