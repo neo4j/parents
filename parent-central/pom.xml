@@ -66,7 +66,7 @@
         <plugin>
           <groupId>org.neo4j.build.plugins</groupId>
           <artifactId>docs-maven-plugin</artifactId>
-          <version>3</version>
+          <version>4-SNAPSHOT</version>
           <configuration>
             <filter>${docs-plugin.filter}</filter>
             <skipdocs>${docs-plugin.skip}</skipdocs>
