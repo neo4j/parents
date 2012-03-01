@@ -3,7 +3,7 @@
   <parent>
     <groupId>org.neo4j.build</groupId>
     <artifactId>grandparent</artifactId>
-    <version>33-SNAPSHOT</version>
+    <version>33</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <name>The Neo4j Graph Database Project - Parent</name>
@@ -13,7 +13,7 @@
   <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
   <groupId>org.neo4j.build</groupId>
   <artifactId>parent-central</artifactId>
-  <version>33-SNAPSHOT</version>
+  <version>33</version>
 
   <modules>
     <module>parent</module>
