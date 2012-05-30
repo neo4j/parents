@@ -13,7 +13,7 @@
   <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
   <groupId>org.neo4j.build</groupId>
   <artifactId>grandparent</artifactId>
-  <version>35-SNAPSHOT</version>
+  <version>35</version>
 
   <modules>
     <module>parent-central</module>
