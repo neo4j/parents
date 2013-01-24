@@ -29,6 +29,21 @@
     <short-name>parent-central</short-name>
     <docs-plugin.filter>false</docs-plugin.filter>
     <docs-plugin.skip>false</docs-plugin.skip>
+    <!--  set default phases for plugins -->
+    <attach-java-sources-phase>none</attach-java-sources-phase>
+    <attach-java-test-sources-phase>none</attach-java-test-sources-phase>
+    <attach-test-jar-phase>package</attach-test-jar-phase>
+    <attach-docs-phase>none</attach-docs-phase>
+    <attach-javadoc-phase>none</attach-javadoc-phase>
+    <create-site-phase>none</create-site-phase>
+    <attach-descriptor-phase>none</attach-descriptor-phase>
+    <test-resources-phase>process-test-resources</test-resources-phase>
+    <test-compile-phase>test-compile</test-compile-phase>
+    <test-phase>test</test-phase>
+    <scala-test-compile-phase>process-test-resources</scala-test-compile-phase>
+    <integration-test-phase>none</integration-test-phase>
+    <integration-verify-phase>none</integration-verify-phase>
+    <clirr-check-phase>none</clirr-check-phase>
   </properties>
 
   <licenses>
@@ -44,7 +59,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
-          <version>3.1</version>
+          <version>3.2</version>
           <dependencies>
             <dependency>
               <groupId>org.apache.maven.doxia</groupId>
@@ -76,6 +91,26 @@
             <filter>${docs-plugin.filter}</filter>
             <skipdocs>${docs-plugin.skip}</skipdocs>
           </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-failsafe-plugin</artifactId>
+          <executions>
+            <execution>
+              <id>integration-test</id>
+              <phase>${integration-test-phase}</phase>
+              <goals>
+                <goal>integration-test</goal>
+              </goals>
+            </execution>
+            <execution>
+              <id>integration-verify</id>
+              <phase>${integration-verify-phase}</phase>
+              <goals>
+                <goal>verify</goal>
+              </goals>
+            </execution>
+          </executions>
         </plugin>
         <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
         <plugin>
@@ -133,11 +168,21 @@
 
     <plugins>
       <plugin>
-        <groupId>org.neo4j.build.plugins</groupId>
-        <artifactId>docs-maven-plugin</artifactId>
+        <artifactId>maven-resources-plugin</artifactId>
         <executions>
           <execution>
-            <goals><goal>assemble</goal></goals>
+            <id>default-testResources</id>
+            <phase>${test-resources-phase}</phase>
+            <goals><goal>testResources</goal></goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>attach-javadoc</id>
+            <phase>${attach-javadoc-phase}</phase>
           </execution>
         </executions>
       </plugin>
@@ -184,6 +229,89 @@
           </properties>
         </configuration>
       </plugin>
+      <plugin>
+        <artifactId>maven-jar-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>attach-test-jar</id>
+            <phase>${attach-test-jar-phase}</phase>
+            <goals>
+              <goal>test-jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+       <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>default-testCompile</id>
+            <phase>${test-compile-phase}</phase>
+          </execution>
+        </executions>
+      </plugin>
+     <plugin>
+        <artifactId>maven-source-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>attach-java-sources</id>
+            <phase>${attach-java-sources-phase}</phase>
+            <goals><goal>jar-no-fork</goal></goals>
+          </execution>
+          <execution>
+            <id>attach-java-test-sources</id>
+            <phase>${attach-java-test-sources-phase}</phase>
+            <goals>
+              <goal>test-jar-no-fork</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>attach-test-sources</id>
+            <phase>none</phase>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>default-test</id>
+            <phase>${test-phase}</phase>
+            <goals><goal>test</goal></goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.neo4j.build.plugins</groupId>
+        <artifactId>docs-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>attach-docs</id>
+            <phase>${attach-docs-phase}</phase>
+            <goals><goal>assemble</goal></goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-site-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>create-site</id>
+            <phase>${create-site-phase}</phase>
+          </execution>
+          <execution>
+            <id>attach-descriptor</id>
+            <phase>${attach-descriptor-phase}</phase>
+            <goals>
+              <goal>attach-descriptor</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+      </plugin>
     </plugins>
   </build>
 
@@ -196,66 +324,49 @@
 
   <profiles>
     <profile>
-      <id>neodev</id>
+      <id>neo-full-build</id>
       <activation>
         <activeByDefault>false</activeByDefault>
+        <property>
+          <name>fullBuild</name>
+        </property>
       </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <artifactId>maven-source-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>attach-java-sources</id>
-                <phase>none</phase>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>attach-javadoc</id>
-                <phase>none</phase>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <groupId>org.neo4j.build.plugins</groupId>
-            <artifactId>docs-maven-plugin</artifactId>
-            <configuration>
-              <skipdocs>true</skipdocs>
-            </configuration>
-          </plugin>
-          <plugin>
-            <artifactId>maven-site-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>create-site</id>
-                <phase>none</phase>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <groupId>org.neo4j.build.plugins</groupId>
-            <artifactId>license-maven-plugin</artifactId>
-            <!-- inserting licenses is better than checking for them -->
-            <executions>
-              <execution>
-                <id>check-licenses</id>
-                <phase>none</phase>
-              </execution>
-              <execution>
-                <id>insert-licenses</id>
-                <phase>initialize</phase>
-                <goals>
-                  <goal>format</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
+      <properties>
+        <attach-java-sources-phase>package</attach-java-sources-phase>
+        <attach-java-test-sources-phase>package</attach-java-test-sources-phase>
+        <attach-test-jar-phase>package</attach-test-jar-phase>
+        <attach-docs-phase>package</attach-docs-phase>
+        <attach-javadoc-phase>package</attach-javadoc-phase>
+        <attach-descriptor-phase>none</attach-descriptor-phase>
+        <integration-test-phase>integration-test</integration-test-phase>
+        <integration-verify-phase>verify</integration-verify-phase>
+        <clirr-check-phase>verify</clirr-check-phase>
+      </properties>
+    </profile>
+    <profile>
+      <id>run-integration-tests</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+        <property>
+          <name>runITs</name>
+        </property>
+      </activation>
+      <properties>
+        <integration-test-phase>integration-test</integration-test-phase>
+        <integration-verify-phase>verify</integration-verify-phase>
+      </properties>
+    </profile>
+    <profile>
+      <id>run-clirr</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+        <property>
+          <name>runClirr</name>
+        </property>
+      </activation>
+      <properties>
+        <clirr-check-phase>verify</clirr-check-phase>
+      </properties>
     </profile>
     <profile>
       <id>freeze</id>
