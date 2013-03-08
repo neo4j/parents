@@ -13,7 +13,7 @@
   <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
   <groupId>org.neo4j.build</groupId>
   <artifactId>grandparent</artifactId>
-  <version>38-SNAPSHOT</version>
+  <version>37-SNAPSHOT</version>
 
   <prerequisites>
     <maven>2.2.1</maven>
@@ -42,7 +42,6 @@
     <connection>scm:git:git://github.com/neo4j/parents.git</connection>
     <developerConnection>scm:git:git@github.com:neo4j/parents.git</developerConnection>
     <url>https://github.com/neo4j/parents</url>
-    <tag>HEAD</tag>
   </scm>
 
   <mailingLists>
