@@ -306,6 +306,14 @@
               <goal>attach-descriptor</goal>
             </goals>
           </execution>
+          <execution>
+            <id>parent-attach-descriptor</id>
+            <phase>package</phase>
+            <inherited>false</inherited>
+            <goals>
+              <goal>attach-descriptor</goal>
+            </goals>
+          </execution>
         </executions>
       </plugin>
       <plugin>
