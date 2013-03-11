@@ -343,7 +343,7 @@
         <attach-java-sources-phase>package</attach-java-sources-phase>
         <attach-java-test-sources-phase>package</attach-java-test-sources-phase>
         <attach-test-jar-phase>package</attach-test-jar-phase>
-        <attach-docs-phase>package</attach-docs-phase>
+        <attach-docs-phase>verify</attach-docs-phase>
         <attach-javadoc-phase>package</attach-javadoc-phase>
         <attach-descriptor-phase>none</attach-descriptor-phase>
         <integration-test-phase>integration-test</integration-test-phase>
