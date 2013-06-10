@@ -16,7 +16,7 @@
   <version>40-SNAPSHOT</version>
 
   <prerequisites>
-    <maven>2.2.1</maven>
+    <maven>3.0.0</maven>
   </prerequisites>
 
   <modules>
@@ -535,6 +535,7 @@
           <detectOfflineLinks>false</detectOfflineLinks>
           <quiet>true</quiet>
           <excludePackageNames>*.impl.*</excludePackageNames>
+          <show>public</show>
         </configuration>
         <executions>
           <execution>
@@ -581,53 +582,6 @@
       </plugin>
     </plugins>
   </build>
-
-  <reporting>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>2.9</version>
-        <inherited>true</inherited>
-        <configuration>
-          <quiet>true</quiet>
-          <detectLinks>false</detectLinks>
-          <detectOfflineLinks>false</detectOfflineLinks>
-          <detectJavaApiLink>true</detectJavaApiLink>
-          <excludePackageNames>*.impl.*</excludePackageNames>
-        </configuration>
-        <reportSets>
-          <reportSet>
-            <id>javadoc-report</id>
-            <reports>
-              <report>javadoc</report>
-            </reports>
-          </reportSet>
-        </reportSets>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>2.6</version>
-        <configuration>
-          <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
-          <dependencyDetailsEnabled>false</dependencyDetailsEnabled>
-        </configuration>
-        <reportSets>
-          <reportSet>
-            <reports>
-              <report>index</report>
-              <report>dependencies</report>
-              <report>plugins</report>
-              <report>mailing-list</report>
-              <report>license</report>
-              <report>summary</report>
-            </reports>
-          </reportSet>
-        </reportSets>
-      </plugin>
-    </plugins>
-  </reporting>
 
   <dependencyManagement>
     <dependencies>
