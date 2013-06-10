@@ -29,7 +29,6 @@
     <sun.tools.version>${neo4j.java.version}</sun.tools.version>
     <ga-id>UA-1192232-15</ga-id>
     <short-name>grandparent</short-name>
-    <cuke4duke.version>0.4.4</cuke4duke.version>
     <failsafe-argline>-Xmx300m</failsafe-argline>
     <docs.url>http://docs.neo4j.org/</docs.url>
   </properties>
@@ -316,11 +315,6 @@
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>clirr-maven-plugin</artifactId>
           <version>2.5</version>
-        </plugin>
-        <plugin>
-          <groupId>cuke4duke</groupId>
-          <artifactId>cuke4duke-maven-plugin</artifactId>
-          <version>${cuke4duke.version}</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
