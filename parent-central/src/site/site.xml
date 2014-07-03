@@ -30,7 +30,7 @@
     <body>
         <links>
           <item name="Neo4j home" href="http://neo4j.org/" />
-          <item name="blog" href="http://blog.neo4j.org/" />
+          <item name="blog" href="http://neo4j.com/blog/" />
           <item name="documentation" href="http://docs.neo4j.org/" />
           <item name="apidocs" href="http://api.neo4j.org/" />
           <item name="components" href=".." />
