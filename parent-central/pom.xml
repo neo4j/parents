@@ -221,7 +221,8 @@
             <exclude>**/javascript/vend/**</exclude>
           </excludes>
           <mapping>
-            <scala>JAVADOC_STYLE</scala>
+            <java>SLASHSTAR_STYLE</java>
+            <scala>SLASHSTAR_STYLE</scala>
           </mapping>
           <timestampPropertyName>currentYear</timestampPropertyName>
           <properties>
