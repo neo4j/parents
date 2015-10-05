@@ -25,14 +25,13 @@
     <bannerLeft>
         <name>${project.name}</name>
         <src>images/logos/logo-dark.png</src>
-        <href>http://neo4j.org/</href>
+        <href>http://neo4j.com/</href>
     </bannerLeft>
     <body>
         <links>
-          <item name="Neo4j home" href="http://neo4j.org/" />
+          <item name="Neo4j home" href="http://neo4j.com/" />
           <item name="blog" href="http://neo4j.com/blog/" />
-          <item name="documentation" href="http://docs.neo4j.org/" />
-          <item name="apidocs" href="http://api.neo4j.org/" />
+          <item name="documentation" href="http://neo4j.com/docs/" />
           <item name="components" href=".." />
         </links>
         <menu name="${project.name}">

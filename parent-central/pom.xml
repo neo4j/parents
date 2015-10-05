@@ -10,7 +10,7 @@
   <description>Neo4j is a high-performance, NOSQL graph database with all the features of a mature and robust database. </description>
   <inceptionYear>2002</inceptionYear>
   <packaging>pom</packaging>
-  <url>http://components.neo4j.org/${project.artifactId}/${project.version}</url>
+  <url>http://neo4j.com/</url>
   <groupId>org.neo4j.build</groupId>
   <artifactId>parent-central</artifactId>
   <version>43-SNAPSHOT</version>
@@ -59,12 +59,12 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
-          <version>3.3</version>
+          <version>3.4</version>
           <dependencies>
             <dependency>
               <groupId>org.apache.maven.doxia</groupId>
               <artifactId>doxia-core</artifactId>
-              <version>1.4</version>
+              <version>1.6</version>
             </dependency>
             <dependency>
               <groupId>${skinGroupId}</groupId>
@@ -325,13 +325,6 @@
       </plugin>
     </plugins>
   </build>
-
-  <distributionManagement>
-    <site>
-      <id>neo4j-site</id>
-      <url>scpexe://docs.neo4j.org/data/www/doc/components.neo4j.org/${project.artifactId}/${project.version}</url>
-    </site>
-  </distributionManagement>
 
   <profiles>
     <profile>
