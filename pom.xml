@@ -13,7 +13,7 @@
   <url>http://neo4j.com/</url>
   <groupId>org.neo4j.build</groupId>
   <artifactId>grandparent</artifactId>
-  <version>43-SNAPSHOT</version>
+  <version>43</version>
 
   <prerequisites>
     <maven>3.0.0</maven>

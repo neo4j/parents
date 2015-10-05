@@ -3,14 +3,14 @@
   <parent>
     <groupId>org.neo4j.build</groupId>
     <artifactId>parent-central</artifactId>
-    <version>43-SNAPSHOT</version>
+    <version>43</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <groupId>org.neo4j.build</groupId>
   <artifactId>parent-pom</artifactId>
   <name>Neo4j parent POM</name>
   <packaging>pom</packaging>
-  <version>43-SNAPSHOT</version>
+  <version>43</version>
 
   <modules>
     <module>assembly-pom</module>
