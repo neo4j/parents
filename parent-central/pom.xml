@@ -215,6 +215,7 @@
             <include>src/**/*.scala</include>
             <include>src/**/*.xml</include>
             <include>src/**/*.feature</include>
+            <include>src/**/*.g4</include>
           </includes>
           <excludes>
             <exclude>**/lib/*.js</exclude>
@@ -225,6 +226,7 @@
             <java>SLASHSTAR_STYLE</java>
             <scala>SLASHSTAR_STYLE</scala>
             <feature>SCRIPT_STYLE</feature>
+            <g4>SLASHSTAR_STYLE</g4>
           </mapping>
           <timestampPropertyName>currentYear</timestampPropertyName>
           <properties>
