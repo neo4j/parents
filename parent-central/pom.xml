@@ -11,7 +11,6 @@
   <inceptionYear>2002</inceptionYear>
   <packaging>pom</packaging>
   <url>http://neo4j.com/</url>
-  <groupId>org.neo4j.build</groupId>
   <artifactId>parent-central</artifactId>
   <version>44-SNAPSHOT</version>
 
