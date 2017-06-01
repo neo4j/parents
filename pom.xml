@@ -565,6 +565,13 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <configuration>
+          <keyname>${gpg.keyname}</keyname>
+          <passphrase>${gpg.passphrase}</passphrase>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 
