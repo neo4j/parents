@@ -720,6 +720,9 @@
       <uniqueVersion>false</uniqueVersion>
       <url>http://m2.neo4j.org/content/repositories/snapshots</url>
     </snapshotRepository>
+    <repository>
+      <id>central</id>
+    </repository>
   </distributionManagement>
 
   <profiles>
