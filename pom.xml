@@ -1,11 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>org.sonatype.oss</groupId>
-    <artifactId>oss-parent</artifactId>
-    <version>7</version>
-    <relativePath />
-  </parent>
   <name>The Neo4j Graph Database Project - Grandparent</name>
   <description>Neo4j is a high-performance, NOSQL graph database with all the features of a mature and robust database. </description>
   <inceptionYear>2002</inceptionYear>
@@ -724,8 +718,7 @@
 
   <profiles>
     <profile>
-      <id>sonatype-oss-release</id>
-      <!-- needed in order to override versions in the sonatype parent. -->
+      <id>release</id>
       <build>
         <plugins>
           <plugin>
