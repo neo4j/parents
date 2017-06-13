@@ -714,12 +714,6 @@
   </repositories>
 
   <distributionManagement>
-    <snapshotRepository>
-      <id>snapshots@m2.neo4j.org</id>
-      <name>snapshots@m2.neo4j.org</name>
-      <uniqueVersion>false</uniqueVersion>
-      <url>http://m2.neo4j.org/content/repositories/snapshots</url>
-    </snapshotRepository>
     <repository>
       <id>sonatype-nexus-staging</id>
       <name>Nexus Release Repository</name>
