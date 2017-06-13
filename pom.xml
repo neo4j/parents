@@ -721,7 +721,9 @@
       <url>http://m2.neo4j.org/content/repositories/snapshots</url>
     </snapshotRepository>
     <repository>
-      <id>central</id>
+      <id>sonatype-nexus-staging</id>
+      <name>Nexus Release Repository</name>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
     </repository>
   </distributionManagement>
 
