@@ -723,7 +723,7 @@
 
   <profiles>
     <profile>
-      <id>release</id>
+      <id>sign-artifacts</id>
       <build>
         <plugins>
           <plugin>
