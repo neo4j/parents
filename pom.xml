@@ -24,7 +24,7 @@
     <ga-id>UA-1192232-15</ga-id>
     <short-name>grandparent</short-name>
     <failsafe-argline>-Xmx300m</failsafe-argline>
-    <docs.url>http://neo4j.com/docs/</docs.url>
+    <docs.url>https://neo4j.com/docs/</docs.url>
   </properties>
 
   <organization>

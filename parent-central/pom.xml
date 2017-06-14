@@ -26,13 +26,10 @@
     <licensesVersion>7</licensesVersion>
     <license-text.header>AGPL-3-header.txt</license-text.header>
     <short-name>parent-central</short-name>
-    <docs-plugin.filter>false</docs-plugin.filter>
-    <docs-plugin.skip>false</docs-plugin.skip>
     <!--  set default phases for plugins -->
     <attach-java-sources-phase>none</attach-java-sources-phase>
     <attach-java-test-sources-phase>none</attach-java-test-sources-phase>
     <attach-test-jar-phase>package</attach-test-jar-phase>
-    <attach-docs-phase>none</attach-docs-phase>
     <attach-javadoc-phase>none</attach-javadoc-phase>
     <create-site-phase>none</create-site-phase>
     <attach-descriptor-phase>none</attach-descriptor-phase>
@@ -76,15 +73,6 @@
           <groupId>org.neo4j.build.plugins</groupId>
           <artifactId>license-maven-plugin</artifactId>
           <version>3</version>
-        </plugin>
-        <plugin>
-          <groupId>org.neo4j.build.plugins</groupId>
-          <artifactId>docs-maven-plugin</artifactId>
-          <version>5</version>
-          <configuration>
-            <filter>${docs-plugin.filter}</filter>
-            <skipdocs>${docs-plugin.skip}</skipdocs>
-          </configuration>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -134,19 +122,6 @@
                     <versionRange>[1,)</versionRange>
                     <goals>
                       <goal>format</goal>
-                    </goals>
-                  </pluginExecutionFilter>
-                  <action>
-                    <ignore />
-                  </action>
-                </pluginExecution>
-                <pluginExecution>
-                  <pluginExecutionFilter>
-                    <groupId>org.neo4j.build.plugins</groupId>
-                    <artifactId>docs-maven-plugin</artifactId>
-                    <versionRange>[2,)</versionRange>
-                    <goals>
-                      <goal>assemble</goal>
                     </goals>
                   </pluginExecutionFilter>
                   <action>
@@ -281,17 +256,6 @@
         </executions>
       </plugin>
       <plugin>
-        <groupId>org.neo4j.build.plugins</groupId>
-        <artifactId>docs-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>attach-docs</id>
-            <phase>${attach-docs-phase}</phase>
-            <goals><goal>assemble</goal></goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
         <artifactId>maven-site-plugin</artifactId>
         <executions>
           <execution>
@@ -335,7 +299,6 @@
         <attach-java-sources-phase>package</attach-java-sources-phase>
         <attach-java-test-sources-phase>package</attach-java-test-sources-phase>
         <attach-test-jar-phase>package</attach-test-jar-phase>
-        <attach-docs-phase>verify</attach-docs-phase>
         <attach-javadoc-phase>package</attach-javadoc-phase>
         <attach-descriptor-phase>none</attach-descriptor-phase>
         <integration-test-phase>integration-test</integration-test-phase>
