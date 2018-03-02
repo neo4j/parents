@@ -31,7 +31,7 @@ Firstly, there is a _sign-artifacts_ profile that triggers GPG signing of the PO
 
 * If you happen to have messed up your local GPG keystore somehow, beware: the error message from GPG plugin are not easy to decode. Best to try with GPG manually to check it works: `gpg --sign ...` something and `gpg --verify ...` the
 signature using the desired GPG key and passphrase that you intend to use for the real deal.
-* Secondly, depending on your passphrase you _might_ have to escape stuff on the command line to get it safely through to the eventual call out to `mvn verify` that does the actual invokation of GPG plugin and therefore the actual signing
+* Secondly, depending on your passphrase you _might_ have to escape stuff on the command line to get it safely through to the eventual call out to `mvn verify` that does the actual invocation of GPG plugin and therefore the actual signing
 
 Next, getting access to Nexus over at Sonatype: Maven Deploy Plugin does not support passing in credentials on the command line. Yes you read that right. So here is a workaround.
 
